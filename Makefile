@@ -52,9 +52,7 @@ Ignore += supp.tex
 Ignore += $(wildcard *.cpt)
 
 ## supp.pdf: supp.Rnw
-supp.tex: supp.Rnw
-
-supp.tex: supp.Rnw
+supp.tex: supp.Rnw analysis/fits/epochsum.RData
 	Rscript -e "library(knitr); knit('$<')"
 
 ## Crossrefs 2020 Jun 11 (Thu) 

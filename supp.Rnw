@@ -290,7 +290,7 @@ listed in \cref{tab:params}, the relative change in reproduction
 number that needs explanation is
 <<rat_R0_calc,echo=FALSE>>=
 ratR0 <- function(r){ (r / 365 * 18) + 1 }
-load("analysis/fits/.epochsum.RData")
+load("analysis/fits/epochsum.RData")
 r1 <- rvals["fit","early"]
 r2 <- rvals["fit","late"]
 R01 <- ratR0(r1)

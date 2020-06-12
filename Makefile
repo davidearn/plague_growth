@@ -92,6 +92,10 @@ analysis/tables/%.tex: $(wildcard analysis/tables/*.R)
 
 ######################################################################
 
+## Submission files
+
+######################################################################
+
 ## Miscellaneous
 
 Sources += pnas-new.bst $(wildcard images/*.*)

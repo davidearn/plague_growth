@@ -91,7 +91,7 @@ begin      end         dsource  nx fac  label size
 1551-01-01 1551-12-31  parish   0 5.5  sickness 1.5
 1557-01-01 1559-12-31  parish   0 3  flu                2
 1649-01-30 1660-06-29  parish   1 2  Interregnum  2
-1558-11-17 1558-11-17  parish   0 2.2    \\includegraphics[width=15pt]{../../images/crown.png} 2",
+1558-11-17 1558-11-17  parish   0 2.2    \\includegraphics[width=15pt]{crown.png} 2",
 colClasses=c("Date","Date","character","numeric","numeric","character",
              "numeric"))
 

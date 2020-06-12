@@ -52,7 +52,7 @@ Ignore += supp.tex
 Ignore += $(wildcard *.cpt)
 
 ## supp.pdf: supp.Rnw
-supp.tex: supp.Rnw analysis/fits/epochsum.Rout
+supp.tex: supp.Rnw
 
 supp.tex: supp.Rnw
 	Rscript -e "library(knitr); knit('$<')"
@@ -67,14 +67,13 @@ supp_crossrefs.tex: supp.tex
 ######################################################################
 
 ### Analysis subdirectories
-analysis/plots/makestuff analysis/fits/makestuff analysis/tables/makestuff:
-	$(makethere)
-
 ## fits ##
 Sources += $(wildcard analysis/fits/*.R)
-Sources += analysis/fits/Makefile analysis/fits/window_defs.csv
-Ignore += analysis/fits/*.tex analysis/fits/*.pdf
+Sources += analysis/fits/Makefile
+Ignore += analysis/fits/*.tex analysis/fits/*.pdf analysis/fits/*.rds
 analysis/fits/%.tex analysis/fits/%.Rout: $(wildcard analysis/fits/*.R)
+	$(makethere)
+analysis/plots/makestuff analysis/fits/makestuff:
 	$(makethere)
 
 ## plots ##
@@ -98,11 +97,7 @@ analysis/tables/%.tex: $(wildcard analysis/tables/*.R)
 
 Sources += pnas-new.bst $(wildcard images/*.*)
 
-Ignore += plague plague.zip
-plague: plague.zip
-
-plague.zip:
-	wget -O $@ "https://github.com/davidearn/plague/archive/master.zip"
+Sources += $(wildcard data/*.*)
 
 ######################################################################
 
@@ -111,11 +106,11 @@ $(Sources):
 	$(MAKE) plague
 	cp plague/$@ .
 
+Ignore += plague
 plague:
 	git clone https://github.com/davidearn/plague.git
 
-images/%:
-	cp ../plague/$@ $@
+Ignore += $(wildcard */*/content.mk)
 
 ######################################################################
 

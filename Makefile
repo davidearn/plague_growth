@@ -90,9 +90,23 @@ analysis/tables/%.tex: $(wildcard analysis/tables/*.R)
 
 ######################################################################
 
-## Submission files
+## Autosub (make files for submission)
 
-Sources += submit/Makefile
+Ignore += ms_flat.tex
+ms_flat.tex: ms.tex
+	perl -f makestuff/latexpand.pl $< > $@
+
+Sources += autosub/Makefile
+Ignore += autosub/*.*
+autosub:
+	$(mkdir)
+Sources += submit.pl
+autosub/Earn_etal_MS.tex: ms_flat.tex submit.pl
+	$(MAKE) autosub
+	$(PUSH)
+
+autosub/Earn_etal_MS.pdf: autosub/Makefile
+	$(makethere)
 
 ######################################################################
 

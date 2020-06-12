@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+
+\input{nlipreamble.tex}
+
+%% we need to cross-reference to supp file:
+\usepackage{xr-hyper}
+\externaldocument{supp}
+
+\input{analysis/fits/modeldefs.tex}
+
+\renewcommand{\supp}{\href[page=1]{supp.pdf}{Supplemental Information}\xspace}
+\usepackage{subcaption} % for combdata figure
+\usepackage{rotating}
+%% tables:
+\definecolor[named]{verylightgray}{rgb}{0.93,0.93,0.93}
+
+\newcommand{\mysection}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\mysectionsamepage}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+\newcommand{\mysubsection}[1]{\subsection*{#1}\addcontentsline{toc}{section}{#1}}
+%%
+%% http://tex.stackexchange.com/questions/316510/hyperlink-within-caption-to-a-figure
+%% if used in a caption, need short content \caption[...]{ ... \Methodslink ... }
+\newcommand{\Methodslink}{\hyperlink{Methods}{\emph{Methods}}}
+\newcommand\ttbackslash{{\tt\char`\\}}
+\newcommand{\macro}[1]{{\tt\ttbackslash#1}}
+
+%% avoid need to cross-reference with supp file by explicitly
+%% including newlabel commands from supp.aux here. 
+\input{supp_crossrefs.tex}
+
+%% Main MS text
+\input{ms_text.tex}
+
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+  \OLDthebibliography{#1}
+  \setlength{\parskip}{3pt}
+  \setlength{\itemsep}{3pt plus 0.3ex}
+}
+%%\baselineskip=0pt
+
+\bibliographystyle{pnas-new}
+\bibliography{plague}
+\addcontentsline{toc}{section}{References}
+
+\end{document}

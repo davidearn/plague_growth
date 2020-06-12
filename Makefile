@@ -93,7 +93,6 @@ analysis/tables/%.tex: $(wildcard analysis/tables/*.R)
 ######################################################################
 
 ## Crib
-
 $(Sources):
 	cp ../plague/$@ .
 

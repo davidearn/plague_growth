@@ -94,6 +94,8 @@ analysis/tables/%.tex: $(wildcard analysis/tables/*.R)
 
 ## Submission files
 
+Sources += submit/Makefile
+
 ######################################################################
 
 ## Miscellaneous

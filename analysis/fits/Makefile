@@ -9,6 +9,10 @@ current: target
 
 Sources += $(wildcard *.R)
 
+## Tex files are side effects
+modeldefs.tex: epochsum.Rout ;
+wills_delay_defs.tex: wills_delay_defs.Rout ;
+
 ## predicted values and summary statistics (r, R0, etc. in both epochs)
 epochsum.Rout: permtest.Rout epochsum.R
 	$(run-R)

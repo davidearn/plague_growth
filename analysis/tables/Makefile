@@ -11,6 +11,7 @@ params.tex: params.Rout ;
 params.Rout: ../fits/nlminb_major.do.Rout ../fits/epidemics.Rout ../fits/permtest.Rout table.Rout params.R
 	$(run-R)
 
+wills_delay_tab.tex: wills_delay_tab.Rout ;
 wills_delay_tab.Rout: ../fits/wills_delay.rds wills_delay_tab.R
 
 epochsum.tex: epochsum.Rout ;

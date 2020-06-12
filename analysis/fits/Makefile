@@ -35,6 +35,22 @@ comb.Rout: epidemics.Rout nlminb_major.do.Rout comb.R
 
 ######################################################################
 
+data.Rout: epidemics.R data.R
+	$(run-R)
+
+## fit minor epidemics (supp only)
+minors.Rout: set_minors.Rout epidemics.R doFits.R
+	$(run-R)
+
+Ignore += wills_delay.rds
+wills_delay.rds: wills_delay.Rout ;
+wills_delay.Rout: comb.Rout wills_delay.R
+
+wills_delay_defs.Rout: wills_delay.rds wills_delay_defs.R
+	$(run-R)
+
+######################################################################
+
 ## Settings
 
 Sources += window_defs.csv

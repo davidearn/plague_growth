@@ -11,6 +11,22 @@ params.tex: params.Rout ;
 params.Rout: ../fits/nlminb_major.do.Rout ../fits/epidemics.Rout ../fits/permtest.Rout table.Rout params.R
 	$(run-R)
 
+wills_delay_tab.Rout: ../fits/wills_delay.rds wills_delay_tab.R
+
+epochsum.tex: epochsum.Rout ;
+epochsum.Rout: ../fits/permtest.Rout epochsum.R
+	$(run-R)
+
+minorparams.tex: minorparams.Rout ;
+minorparams.Rout: ../fits/minors.Rout ../fits/epidemics.Rout table.Rout minorparams.R
+	$(run-R)
+
+suppwindows.tex: suppwindows.Rout ;
+suppwindows.Rout: ../fits/nlminb_major.do.Rout suppwindows.R
+
+suppwindowsminor.tex: suppwindowsminor.Rout ;
+suppwindowsminor.Rout: ../fits/minors.Rout suppwindowsminor.R
+
 ### fits subdirectory
 ../fits/%.Rout ../fits/%.rds: $(wildcard ../fits/*.R)
 	$(makethere)

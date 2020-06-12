@@ -21,6 +21,52 @@ combdata.tex: combdata.Rout ;
 combdata.Rout: ../fits/comb.Rout ../fits/permtest.Rout
 combdata.Rout: ../fits/epidemics.Rout setcolours.Rout 3axes.Rout combdata.R
 
+probate_dates.tex: probate_dates.Rout ;
+probate_dates.Rout: ../fits/epidemics.Rout ../fits/comb.Rout plot.setup.Rout probate_dates.R
+
+## plot3sources.pdf: plot3sources.R
+plot3sources.tex: plot3sources.Rout ;
+plot3sources.Rout: setcolours.Rout plot3sources.R
+	$(run-R)
+
+## Panel blowups (show details for big epidemics)
+## plot3sourcesmajors.pdf: 
+plot3sourcesmajors.tex: plot3sourcesmajors.Rout ;
+plot3sourcesmajors.Rout: setcolours.Rout plot3sourcesmajors.R
+	$(run-R)
+
+# seasonalgrowth.pdf: seasonalgrowth.R
+seasonalgrowth.tex: seasonalgrowth.Rout ;
+seasonalgrowth.Rout: ../fits/nlminb_logit_major.do.Rout.envir ../fits/minors.Rout.envir setcolours.Rout ../fits/epidemics.Rout plot.Rout seasonalgrowth.R
+	$(run-R)
+
+# plotallscaled.crop.pdf: plotallscaled.R
+plotallscaled.tex: plotallscaled.Rout ;
+plotallscaled.Rout: ../fits/data.Rout plot.setup.Rout plotallscaled.R
+
+# plotall.crop.pdf: plotall.R
+plotall.tex: plotall.Rout ;
+plotall.Rout: ../fits/data.Rout plot.setup.Rout plotall.R
+
+## plotwills14c.pdf: plotwills14c.R
+plotwills14c.tex: plotwills14c.Rout ;
+plotwills14c.Rout: setcolours.Rout plotwills14c.R
+
+## KvsR.pdf: KvsR.R
+KvsR.tex: KvsR.Rout ;
+KvsR.Rout: KvsR.R ../fits/epochsum.Rout
+
+## population only (would log scale be better?)
+## london_pop.pdf: london_pop.R
+london_pop.tex: london_pop.Rout ;
+london_pop.Rout: london_pop.R
+
+######################################################################
+
+## Figure cropping
+%.crop.pdf: %.pdf
+	pdfcrop $< $@
+
 ### Analysis subdirectory
 Sources += $(wildcard analysis/fits/*.R)
 .PRECIOUS: ../fits/%.Rout

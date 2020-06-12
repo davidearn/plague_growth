@@ -1,6 +1,9 @@
 
 Code to make Earn et al. 2020 plague
 
+
+----------------------------------------------------------------------
+
 Issues
 * Warnings in the bbl step
 	* Warning--can't use both author and editor fields in Lath85

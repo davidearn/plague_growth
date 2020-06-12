@@ -34,14 +34,6 @@ suppwindowsminor.Rout: ../fits/minors.Rout suppwindowsminor.R
 
 ######################################################################
 
-## Crib
-
-.PRECIOUS: %.R
-%.R:
-	/bin/cp ../../../plague/analysis/tables/$@ .
-
-##################################################################
-
 Makefile: makestuff
 makestuff:
 	/bin/ln -s ../../makestuff

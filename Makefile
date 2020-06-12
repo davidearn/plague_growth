@@ -77,6 +77,7 @@ analysis/plots/makestuff analysis/fits/makestuff:
 ## plots ##
 Sources += $(wildcard analysis/plots/*.R)
 Sources += analysis/plots/Makefile analysis/plots/crown.png
+analysis/plots/crown.png: ;
 Ignore += analysis/plots/*.tex analysis/plots/*.pdf
 analysis/plots/%.pdf: $(wildcard analysis/plots/*.R)
 	$(makethere)
@@ -101,20 +102,6 @@ Sources += submit/Makefile
 Sources += pnas-new.bst $(wildcard images/*.*)
 
 Sources += $(wildcard data/*.*)
-
-######################################################################
-
-## Crib
-$(Sources):
-	$(MAKE) plague
-	cp plague/$@ .
-
-Ignore += plague
-plague:
-	git clone https://github.com/davidearn/plague.git
-
-# Ignore += $(wildcard */*/content.mk)
-Ignore += content.mk
 
 ######################################################################
 

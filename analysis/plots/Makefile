@@ -8,7 +8,7 @@ current: target
 ######################################################################
 
 ## plot_all.pdf: plot_all.R
-plot_all.tex: plot_all.Rout ;
+crown.tex plot_all.tex: plot_all.Rout ;
 plot_all.Rout: ../fits/epidemics.Rout setcolours.Rout plot_all.R
 
 Ignore += timeseries.tex timeseries.pdf
@@ -74,14 +74,6 @@ Sources += $(wildcard analysis/fits/*.R)
 	$(makethere)
 
 ######################################################################
-
-## Crib
-
-.PRECIOUS: %.R
-%.R:
-	/bin/cp ../../../plague/analysis/plots/$@ .
-
-##################################################################
 
 Makefile: makestuff
 makestuff:

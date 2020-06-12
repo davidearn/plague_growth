@@ -80,7 +80,6 @@ analysis/plots/makestuff analysis/fits/makestuff:
 Sources += $(wildcard analysis/plots/*.R)
 Sources += analysis/plots/Makefile
 Ignore += analysis/plots/*.tex analysis/plots/*.pdf
-Ignore += analysis/plots/*.png
 analysis/plots/%.pdf: $(wildcard analysis/plots/*.R)
 	$(makethere)
 

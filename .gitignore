@@ -37,3 +37,25 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+*.aux
+.*.rout
+*.Rout
+*.wrapR.r
+*.log
+*.out
+*.bbl
+.*.RData
+.*.pdf
+.*.Rlog
+*.pdf
+*.blg
+*/*.tex
+*/*/*.tex
+target.mk
+makestuff
+\#*
+.#*
+*.toc
+*.cpt
+

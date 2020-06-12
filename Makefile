@@ -41,6 +41,8 @@ paper: texstuff.alltex library.Rout supp.alltex ms.alltex
 	$(MAKE) ms.pdf
 	$(MAKE) supp.pdf
 
+## ms.pdf: ms.tex
+
 ######################################################################
 
 ## Supp and crossrefs
@@ -52,15 +54,15 @@ Ignore += $(wildcard *.cpt)
 ## supp.pdf: supp.Rnw
 supp.tex: supp.Rnw analysis/fits/epochsum.Rout
 
-%.tex: %.Rnw
+supp.tex: supp.Rnw
 	Rscript -e "library(knitr); knit('$<')"
 
 ## Crossrefs 2020 Jun 11 (Thu) 
 
 Ignore += supp_crossrefs.tex
-supp.aux: supp.ltx ;
-supp_crossrefs.tex: supp.aux
-	grep newlabel $< > $@
+supp_crossrefs.tex: supp.tex
+	$(MAKE) supp.ltx
+	grep newlabel supp.aux > $@
 
 ######################################################################
 
@@ -82,7 +84,7 @@ Ignore += analysis/plots/*.png
 analysis/plots/%.pdf: $(wildcard analysis/plots/*.R)
 	$(makethere)
 
-## tables##
+## tables ##
 Sources += $(wildcard analysis/tables/*.R)
 Sources += analysis/tables/Makefile
 Ignore += analysis/tables/*.tex
@@ -91,9 +93,28 @@ analysis/tables/%.tex: $(wildcard analysis/tables/*.R)
 
 ######################################################################
 
+## Miscellaneous
+
+Sources += pnas-new.bst $(wildcard images/*.*)
+
+Ignore += plague plague.zip
+plague: plague.zip
+
+plague.zip:
+	wget -O $@ "https://github.com/davidearn/plague/archive/master.zip"
+
+######################################################################
+
 ## Crib
 $(Sources):
-	cp ../plague/$@ .
+	$(MAKE) plague
+	cp plague/$@ .
+
+plague:
+	git clone https://github.com/davidearn/plague.git
+
+images/%:
+	cp ../plague/$@ $@
 
 ######################################################################
 

@@ -110,7 +110,8 @@ Ignore += plague
 plague:
 	git clone https://github.com/davidearn/plague.git
 
-Ignore += $(wildcard */*/content.mk)
+# Ignore += $(wildcard */*/content.mk)
+Ignore += content.mk
 
 ######################################################################
 

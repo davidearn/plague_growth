@@ -3,8 +3,6 @@
 current: target
 -include target.mk
 
-# -include makestuff/perl.def
-
 vim_session:
 	bash -cl "vmt"
 
@@ -45,6 +43,8 @@ paper: texstuff.alltex library.Rout supp.alltex ms.alltex
 
 ######################################################################
 
+## Supp and crossrefs
+
 Sources += supp.Rnw
 Ignore += supp.tex
 Ignore += $(wildcard *.cpt)
@@ -65,7 +65,7 @@ supp_crossrefs.tex: supp.aux
 ######################################################################
 
 ### Analysis subdirectories
-## sds analysis/fits
+## fits ##
 Sources += $(wildcard analysis/fits/*.R)
 Sources += analysis/fits/Makefile
 Ignore += analysis/fits/*.tex analysis/fits/*.pdf
@@ -74,7 +74,7 @@ analysis/fits/%.tex analysis/fits/%.Rout: $(wildcard analysis/fits/*.R)
 analysis/plots/makestuff analysis/fits/makestuff:
 	$(makethere)
 
-## sds analysis/plots ## ##
+## plots ##
 Sources += $(wildcard analysis/plots/*.R)
 Sources += analysis/plots/Makefile
 Ignore += analysis/plots/*.tex analysis/plots/*.pdf
@@ -82,8 +82,7 @@ Ignore += analysis/plots/*.png
 analysis/plots/%.pdf: $(wildcard analysis/plots/*.R)
 	$(makethere)
 
-## sds analysis/tables ##
-Ignore += tables
+## tables##
 Sources += $(wildcard analysis/tables/*.R)
 Sources += analysis/tables/Makefile
 Ignore += analysis/tables/*.tex

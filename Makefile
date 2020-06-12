@@ -63,7 +63,6 @@ supp_crossrefs.tex: supp.tex
 	grep newlabel supp.aux > $@
 
 ######################################################################
-
 ### Analysis subdirectories
 ## fits ##
 Sources += $(wildcard analysis/fits/*.R)

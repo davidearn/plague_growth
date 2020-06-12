@@ -67,13 +67,14 @@ supp_crossrefs.tex: supp.tex
 ######################################################################
 
 ### Analysis subdirectories
+analysis/plots/makestuff analysis/fits/makestuff analysis/tables/makestuff:
+	$(makethere)
+
 ## fits ##
 Sources += $(wildcard analysis/fits/*.R)
-Sources += analysis/fits/Makefile
+Sources += analysis/fits/Makefile analysis/fits/window_defs.csv
 Ignore += analysis/fits/*.tex analysis/fits/*.pdf
 analysis/fits/%.tex analysis/fits/%.Rout: $(wildcard analysis/fits/*.R)
-	$(makethere)
-analysis/plots/makestuff analysis/fits/makestuff:
 	$(makethere)
 
 ## plots ##

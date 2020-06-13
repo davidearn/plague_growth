@@ -2,7 +2,8 @@
 
 To build the paper:
 
-- type `make checkpaper`
+- install needed packages (`make install_pkgs.Rout`)
+- `make checkpaper`
 
 ## Issues
 

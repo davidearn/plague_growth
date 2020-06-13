@@ -111,6 +111,8 @@ autosub/Earn_etal_MS.pdf: autosub/Makefile autosub/Earn_etal_MS.tex
 
 ## Miscellaneous
 
+install_pkgs.Rout: install_pkgs.R
+
 Sources += pnas-new.bst $(wildcard images/*.*)
 
 Sources += $(wildcard data/*.*)

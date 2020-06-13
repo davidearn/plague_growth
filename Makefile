@@ -102,7 +102,6 @@ autosub:
 	$(mkdir)
 Sources += submit.pl
 autosub/Earn_etal_MS.tex: ms_flat.tex submit.pl
-	$(MAKE) autosub
 	$(PUSH)
 
 autosub/Earn_etal_MS.pdf: autosub/Makefile autosub/Earn_etal_MS.tex

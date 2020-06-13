@@ -35,7 +35,7 @@ fullpaper.pdf: ms.pdf supp.pdf
 	$(MAKE) $@.go || (echo "STOPPING\nSTOPPING: $@ merged but couldn't display\nSTOPPING" && false)
 
 ## paper: supp.Rnw ms.tex
-paper: texstuff.alltex library.Rout supp.alltex supp.pdf ms.alltex
+paper: texstuff.alltex library.Rout ms.ltx supp.ltx ms.alltex supp.alltex
 	@echo
 	@echo Done?
 	$(MAKE) ms.pdf

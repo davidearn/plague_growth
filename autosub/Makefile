@@ -1,4 +1,4 @@
-figs = plot_all.eps timeseries.eps combdata.eps plot_allsources.eps
+figs = timeseries.eps combdata.eps plot_allsources.eps
 pix = WillExample1644_page86_1.eps bill1665adjust.eps
 images = cripplegate_wellcome_parish.eps 
 

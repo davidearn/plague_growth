@@ -24,6 +24,8 @@ combdata.Rout: ../fits/epidemics.Rout setcolours.Rout 3axes.Rout combdata.R
 probate_dates.tex: probate_dates.Rout ;
 probate_dates.Rout: ../fits/epidemics.Rout ../fits/comb.Rout plot.setup.Rout probate_dates.R
 
+## This is not part of the main pipeline
+
 ## plot3sources.pdf: plot3sources.R
 plot3sources.tex: plot3sources.Rout ;
 plot3sources.Rout: setcolours.Rout plot3sources.R

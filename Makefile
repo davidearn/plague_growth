@@ -19,7 +19,7 @@ Ignore += *tikzDictionary
 
 ## Check setup and catch missing packages 
 Sources += library.R texstuff.tex
-
+	
 ######################################################################
 
 ## Documents
@@ -111,7 +111,7 @@ autosub/Earn_etal_MS.pdf: autosub/Makefile autosub/Earn_etal_MS.tex
 
 ## Miscellaneous
 
-install_pkgs.Rout: install_pkgs.R
+install_pkgs.Rout: install_pkgs.R required_packages
 
 Sources += pnas-new.bst $(wildcard images/*.*)
 

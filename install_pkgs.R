@@ -1,4 +1,5 @@
 ## install all packages needed by library.R
+options(repos=c(CRAN="https://cloud.r-project.org"))
 pkgs <- scan("required_packages", comment="#", what=character(0), quiet=TRUE)
 i1 <- installed.packages()
 pkgs <- pkgs[!pkgs %in% rownames(i1)]

@@ -28,4 +28,5 @@ tibble
 tidyr
 tikzDevice
 viridis
+weights
 xtable

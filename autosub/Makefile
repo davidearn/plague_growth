@@ -4,20 +4,23 @@ images = cripplegate_wellcome_parish.eps
 
 bibs = plague.bib pnas-new.bst
 
-Earn_etal_MS.pdf: Earn_etal_MS.tex $(figs) $(pix) $(images) $(bibs)
-	texi2dvi --pdf $<
+Earn_etal_MS.pdf: %.pdf: %.tex $(figs) $(pix) $(images) $(bibs)
+	latex $*
+	bibtex $*
+	latex $*
+	latex $*
 
 .PRECIOUS: $(bibs)
 $(bibs): %: ../%
 	$(linkexisting)
 
 $(figs): %.eps: ../analysis/plots/%.pdf
+	inkscape $< --export-eps=$@
 
 $(pix): %.eps: ../images/%.pdf
+	inkscape $< --export-eps=$@
 
 $(images): %.eps: ../images/%.jpg
-
-%.eps:
-	inkscape $< --export-eps=$@
+	gm convert $< $@
 
 -include ../makestuff/unix.mk

@@ -30,6 +30,12 @@ probate.Rout: ../fits/epidemics.Rout ../fits/comb.Rout probate.R
 ../../data/probate.rds:
 	$(MAKE) probate.Rds
 	$(CP) probate.Rds $@
+willsr:
+	git clone https://github.com/davidearn/willsr.git
+willsr.install:
+	$(MAKE) willsr
+	R CMD INSTALL willsr
+
 
 ## plot3sources.pdf: plot3sources.R
 plot3sources.tex: plot3sources.Rout ;

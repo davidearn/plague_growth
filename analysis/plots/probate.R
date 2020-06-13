@@ -1,4 +1,5 @@
 library(willsr)
+library(dplyr)
 
 ## probate dates and times in husting_wills_individual are not clean/complete
 ww <- (willsr::wills

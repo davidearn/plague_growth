@@ -1,0 +1,31 @@
+## required packages for plague_growth workflow
+## not including bbmle, epigrowthfit (install via remotes::install_github()
+## not including epigrowthfit dependencies (auto-installed)
+## see install_pkgs.R
+broom.mixed
+colorspace
+cowplot
+dfoptim
+directlabels
+dplyr
+emdbook
+emmeans
+ggplot2
+ggstance
+glmmTMB
+gtable
+Hmisc
+huxtable
+lubridate
+multcomp
+nloptr
+optimx
+plyr
+purrr
+remotes
+RColorBrewer
+tibble
+tidyr
+tikzDevice
+viridis
+xtable

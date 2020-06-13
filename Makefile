@@ -8,7 +8,7 @@ vim_session:
 
 ######################################################################
 
-Sources += README.md
+Sources += README.md submit.md
 Ignore += .gitignore
 
 -include makestuff/perl.def
@@ -35,7 +35,7 @@ fullpaper.pdf: ms.pdf supp.pdf
 	$(MAKE) $@.go || (echo "STOPPING\nSTOPPING: $@ merged but couldn't display\nSTOPPING" && false)
 
 ## paper: supp.Rnw ms.tex
-paper: texstuff.alltex library.Rout supp.alltex ms.alltex
+paper: texstuff.alltex library.Rout ms.ltx supp.ltx ms.alltex supp.alltex
 	@echo
 	@echo Done?
 	$(MAKE) ms.pdf
@@ -93,7 +93,7 @@ analysis/tables/%.tex: $(wildcard analysis/tables/*.R)
 ## Autosub (make files for submission)
 
 Ignore += ms_flat.tex
-ms_flat.tex: ms.tex
+ms_flat.tex: ms.tex supp.pdf
 	perl -f makestuff/latexpand.pl $< > $@
 
 Sources += autosub/Makefile
@@ -102,10 +102,9 @@ autosub:
 	$(mkdir)
 Sources += submit.pl
 autosub/Earn_etal_MS.tex: ms_flat.tex submit.pl
-	$(MAKE) autosub
 	$(PUSH)
 
-autosub/Earn_etal_MS.pdf: autosub/Makefile
+autosub/Earn_etal_MS.pdf: autosub/Makefile autosub/Earn_etal_MS.tex
 	$(makethere)
 
 ######################################################################

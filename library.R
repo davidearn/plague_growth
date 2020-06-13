@@ -1,35 +1,9 @@
-library(broom.mixed)
-library(colorspace)
-library(cowplot)
-library(dfoptim)
-library(directlabels)
-library(dplyr)
-library(emdbook)
-library(emmeans)
-library(epigrowthfit)
-library(ggplot2)
-library(ggstance)
-library(glmmTMB)
-library(grid)
-library(gtable)
-library(Hmisc)
-library(huxtable)
-library(lubridate)
-library(methods)
-library(multcomp)
-library(nloptr)
-library(optimx)
-library(plyr)
-library(purrr)
-library(RColorBrewer)
-library(tibble)
-library(tidyr)
-library(tikzDevice)
-library(viridis)
-library(xtable)
-
-stopifnot(
-    packageVersion("glmmTMB")>="0.2.2.9000" ## GH: bbolker/glmmTMB,
-  , packageVersion("bbmle")>="1.0.21.9001"  ## GH: bbolker/bbmle
-)
+p <- scan("required_packages", comment="#", what=character(0), quiet=TRUE)
+p <- c(p, "epigrowthfit", "bbmle")
+res <- suppressMessages(vapply(p,require,character.only=TRUE,logical(1)))
+if (any(!res)) {
+    missing <- p[!res]
+    stop("please install these missing packages: ",
+         paste(missing, collapse=", "))
+}
 

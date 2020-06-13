@@ -18,8 +18,8 @@ Ignore += *tikzDictionary
 ######################################################################
 
 ## Check setup and catch missing packages 
-Sources += library.R texstuff.tex
-	
+Sources += library.R texstuff.tex required_packages
+
 ######################################################################
 
 ## Documents

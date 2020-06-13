@@ -8,17 +8,7 @@ args = commandArgs(trailingOnly=TRUE)
 file = pdfname
 file = paste0(rtargetname, ".tex")
 
-## FIXME: this should probably be independent
-if (require(willsr)) {
-    ## probate dates and times in husting_wills_individual are not clean/complete
-    ww <- (willsr::wills
-        %>% select(ProbateDate)
-        %>% mutate(time=lubridate::decimal_date(ProbateDate))
-    )
-    saveRDS(ww, file = "../../data/probate.rds")
-} else {
-    ww <- readRDS("../../data/probate.rds")
-}
+ww <- readRDS("../../data/probate.rds")
 
 ## get info on wills-written dates from epigrowthfit
 ## (some repetition from analysis/plots/timeseries.R here)

@@ -28,9 +28,18 @@ majorSum <- sumfun(majorList,level=2)
 conv_info <- map_dfr(minorList,get_conv,.id="source")
 conv_info$conv
 
-bad <- conv_info %>% filter(conv==1)
+bad <- (conv_info
+    ## skip these fits because they are *sometimes* bad
+    %>% filter((outbreak.year=="1578" & source=="London bills") |
+               (outbreak.year=="1581" & source=="Canterbury wills") |
+               conv==1)
+)
+
 bad$msg
-stopifnot(nrow(bad)==2)  ## make sure we're only skipping 2 ...
+if (nrow(bad)>2) {
+    print(bad)
+    stop("unexpected convergence failures")
+}
 minorList[["Canterbury wills"]][["1581"]]@mle2@details
 
 ##%>% select(source,outbreak.year,conv,msg)

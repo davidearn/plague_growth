@@ -8,7 +8,7 @@ vim_session:
 
 ######################################################################
 
-Sources += README.md
+Sources += README.md submit.md
 Ignore += .gitignore
 
 -include makestuff/perl.def

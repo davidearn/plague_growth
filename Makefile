@@ -69,9 +69,9 @@ Sources += $(wildcard analysis/fits/*.R)
 Sources += analysis/fits/Makefile
 Ignore += analysis/fits/*.tex analysis/fits/*.pdf analysis/fits/*.rds
 analysis/fits/%.tex analysis/fits/%.Rout: $(wildcard analysis/fits/*.R)
-	$(makethere)
+	$(makestuffthere)
 analysis/plots/makestuff analysis/fits/makestuff:
-	$(makethere)
+	$(makestuffthere)
 
 ## plots ##
 Sources += $(wildcard analysis/plots/*.R)

@@ -84,7 +84,11 @@ london_pop.Rout: london_pop.R
 Sources += $(wildcard analysis/fits/*.R)
 .PRECIOUS: ../fits/%.Rout
 ../fits/%.Rout: $(wildcard ../fits/*.R)
-	$(makethere)
+	$(makestuffthere)
+
+.PRECIOUS: ../fits/%.envir
+../fits/%.envir: $(wildcard ../fits/*.R)
+	$(makestuffthere)
 
 ######################################################################
 

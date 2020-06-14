@@ -4,6 +4,9 @@ images = cripplegate_wellcome_parish.eps
 
 bibs = plague.bib pnas-new.bst
 
+## INKSCAPE = inkscape $< --export-eps=$@
+INKSCAPE = inkscape $< --export-type=eps -o $@
+
 Earn_etal_MS.pdf: %.pdf: Earn_etal_MS.tex $(figs) $(pix) $(images) $(bibs)
 	latex $*
 	bibtex $*
@@ -17,11 +20,11 @@ $(bibs): %: ../%
 
 .PRECIOUS: $(figs)
 $(figs): %.eps: ../analysis/plots/%.pdf
-	inkscape $< --export-eps=$@
+	$(INKSCAPE)
 
 .PRECIOUS: $(pix)
 $(pix): %.eps: ../images/%.pdf
-	inkscape $< --export-eps=$@
+	$(INKSCAPE)
 
 .PRECIOUS: $(images)
 $(images): %.eps: ../images/%.jpg

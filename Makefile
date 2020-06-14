@@ -77,7 +77,7 @@ analysis/plots/makestuff analysis/fits/makestuff:
 Sources += $(wildcard analysis/plots/*.R)
 Sources += analysis/plots/Makefile analysis/plots/crown.png
 analysis/plots/crown.png: ;
-Ignore += analysis/plots/*.tex analysis/plots/*.pdf
+Ignore += analysis/plots/*.tex analysis/plots/*.pdf analysis/plots/willsr
 analysis/plots/%.pdf: $(wildcard analysis/plots/*.R)
 	$(makethere)
 

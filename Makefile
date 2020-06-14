@@ -68,7 +68,7 @@ supp_crossrefs.tex: supp.tex
 Sources += $(wildcard analysis/fits/*.R)
 Sources += analysis/fits/Makefile
 Ignore += analysis/fits/*.tex analysis/fits/*.pdf analysis/fits/*.rds
-analysis/fits/%.tex analysis/fits/%.Rout: $(wildcard analysis/fits/*.R)
+analysis/fits/%.tex analysis/fits/%.Rout analysis/fits/%.RData: $(wildcard analysis/fits/*.R)
 	$(makestuffthere)
 analysis/plots/makestuff analysis/fits/makestuff:
 	$(makestuffthere)

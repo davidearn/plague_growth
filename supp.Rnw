@@ -492,8 +492,6 @@ In the future, we would suggest that further work on reparameterization, includi
 %
 
 %%\clearpage
-%%\bibliographystyle{vancouver}
-%%\bibliographystyle{Science}
 \bibliographystyle{pnas-new}
 \bibliography{plague}
 \addcontentsline{toc}{section}{References}

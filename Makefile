@@ -20,6 +20,8 @@ Ignore += *tikzDictionary
 ## Check setup and catch missing packages 
 Sources += library.R texstuff.tex required_packages
 
+library.Rout: required_packages library.R
+
 ######################################################################
 
 ## Documents
@@ -35,7 +37,7 @@ fullpaper.pdf: ms.pdf supp.pdf
 	$(MAKE) $@.go || (echo "STOPPING\nSTOPPING: $@ merged but couldn't display\nSTOPPING" && false)
 
 ## paper: supp.Rnw ms.tex
-paper: texstuff.alltex library.Rout required_packages ms.ltx supp.ltx ms.alltex supp.alltex
+paper: texstuff.alltex library.Rout ms.ltx supp.ltx ms.alltex supp.alltex
 	@echo
 	@echo Done?
 	$(MAKE) ms.pdf

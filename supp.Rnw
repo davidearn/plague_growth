@@ -422,9 +422,10 @@ R's \code{optim} function as well as R's \code{nlminb} function; we
 also tried an approach that iterated back and forth between
 Nelder-Mead and BFGS until convergence was achieved or the fit was
 sufficiently stable. We chose \code{nlminb} because it gave the best
-results (highest log likelihood) for point estimates. In general, we used the standard link functions proposed by Ma \emph{et al.} \cite{Ma+14}, but we found that the scaled-tangent link proposed by \cite{Ma+14} ($\eta = \tan((x/2-1) \cdot \pi/2)$) declined too slowly in the tails, leading to numerical instability; we replaced it with a more standard logit link ($\eta = \log(x/(1-x))$).
+results (highest log likelihood) for point estimates.
+In general, we used the standard link functions proposed by Ma \emph{et al.} \cite{Ma+14}, i.e. fitting most of the parameters (growth rate $r$, background mortality/wills rate $b$, final size $K$, Richards shape parameter $s$) on the log scale with a scaled-tangent link ($\eta = \tan(\pi/2 \cdot (x/2-1))$) for the initial condition $x_0$. However, we found that the scaled-tangent link declined too slowly in the tails, leading to numerical instability; we replaced it with a more standard logit link ($\eta = \log(x/(1-x))$).
 
-With this approach we failed to achieve good (convergent) fits for only two combinations of source and outbreak year, both for minor outbreaks (London bills for 1578, Canterbury wills for 1581); these cases are excluded from the tables and figures shown below.
+With this approach we failed to achieve good (convergent) fits for only three combinations of source and outbreak year, all for minor outbreaks (London bills for 1578 and 1582, Canterbury wills for 1581); these cases are excluded from the tables and figures shown below.
 
 In the future, we would suggest that further work on reparameterization, including parameterizing the logistic by the time at which half of the final size is achieved rather than by the initial number infected, and possibly the reparameterization and regularization methods suggested by \cite{SmirChow17} for the Richards model, would be useful. 
 

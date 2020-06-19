@@ -236,8 +236,8 @@ Vertical grey lines indicate the ``outbreak window'' specified in \cref{tab:wind
 %%\clearpage
 \section{Generation interval for bubonic plague}\label{sec:gentime}
 
-For pneumonic plague, sufficiently detailed data exist for a number of modern outbreaks to allow an estimate of the latent and infectious periods (and hence of the generation interval distribution) \cite{GaniLeac04}, which we can use to estimate $\rzero$ for a given value of $r$. Much less data is available for bubonic plague; in addition, the more complex host-vector life cycle of bubonic plague complicates the estimation of the generation interval. However, we can say that the elapsed time between the onset of infectiousness of a rat and the time when a rat in the next epidemic cycle becomes infectious is:
-
+For pneumonic plague, sufficiently detailed data exist for a number of modern outbreaks to allow an estimate of the latent and infectious periods (and hence of the generation interval distribution) \cite{GaniLeac04}, which we can use to estimate $\rzero$ for a given value of $r$. Much less data is available for bubonic plague; in addition, the more complex host-vector life cycle of bubonic plague complicates the estimation of the generation interval. However, we can say that the elapsed time between the onset of infectiousness of a rat and the time when a rat in the next infection cycle becomes infectious is:
+%%
 \begin{equation}
   \begin{split}
     &\quad \textrm{rat} \to \textrm{flea infection time} \\
@@ -247,8 +247,10 @@ For pneumonic plague, sufficiently detailed data exist for a number of modern ou
     \mbox{} + &\quad \textrm{rat incubation period}
   \end{split}
 \end{equation}
-
-From \cite{LaPerriere+2009}, we can gather that
+%%
+The second line above takes account of the fact that a flea leaves
+its rat host when, and only when, the rat dies.  From
+\cite{LaPerriere+2009}, we can gather that
 \begin{itemize}
 \item fleas bite rats $\approx$ 4 times/day; the rat $\to$ flea infection probability is $\approx$ 0.2 and the flea $\to$ rat infection probability is $\approx$ 0.28, suggesting that both the rat $\to$ flea and flea $\to$ rat infection times are $\approx$ 1 day; 
 \item the rat infectious period (time until infected rats die) is $\approx$ 4 days (\cite{LaPerriere+2009} cite \cite{Audi03} for this value; \cite{KeelGill00b} give a value of $\approx$ 18 days, which seems unrealistically long --- another source, \cite{Toll+10}, gives values ranging from $\approx$ 4--9 days)
@@ -256,17 +258,12 @@ From \cite{LaPerriere+2009}, we can gather that
 \item the flea searching time is not explicitly defined by \cite{LaPerriere+2009}, but we guess it is relatively short ($<$ 1--2 days)
 \item \cite{LaPerriere+2009} give a value of $\approx$ 1--3 days for the rat incubation period
 \end{itemize}
-
+%%
 Since the flea incubation period is typically longer than the combination of rat death time and flea searching time (9--26 days vs.\ (4--9 + 1--2) days), we can approximate the generation interval as $\approx$ (1 day) + (9--26 days) + (1 day) + (1--3 days); we use a value of $\gentime=18$ days in the main text.
 
 \section{Relationship between rat density and $\R_0$ (in rats)}
 
-One factor that might have contributed to the observed increase in
-epidemic growth rates in London is the density of rats.  We do not
-have data that allow us to estimate rat densities in Medieval England,
-but we can ask---all else being equal---by what factor would rat
-density have to have changed in order to account for the observed
-change in growth rates?
+One factor that might have contributed to the observed increase in epidemic growth rates in London is the density of rats.  We do not have data that allow us to estimate rat densities in Medieval England, but we can ask---all else being equal---by what factor would rat density have to have changed in order to account for the observed change in growth rates?
 
 In the idealized situation in which the generation interval is exponentially distributed (as in the standard SIR model) then \cite{WallLips07}, as mentioned in the Discussion in the main text, 
 %

@@ -249,7 +249,7 @@ For pneumonic plague, sufficiently detailed data exist for a number of modern ou
 \end{equation}
 %%
 The second line above takes account of the fact that a flea leaves
-its rat host when, and only when, the rat dies.  From
+its rat host when, and only when, the rat dies \cite{KeelGill00}.  From
 \cite{LaPerriere+2009}, we can gather that
 \begin{itemize}
 \item fleas bite rats $\approx$ 4 times/day; the rat $\to$ flea infection probability is $\approx$ 0.2 and the flea $\to$ rat infection probability is $\approx$ 0.28, suggesting that both the rat $\to$ flea and flea $\to$ rat infection times are $\approx$ 1 day; 

@@ -9,7 +9,8 @@ current: target
 
 ## plot_allsources.pdf: plot_allsources.R
 crown.tex plot_allsources.tex: plot_allsources.Rout ;
-plot_allsources.Rout: ../fits/epidemics.Rout setcolours.Rout plot_allsources.R
+
+plot_all.Rout: ../fits/epidemics.Rout setcolours.Rout plot_all.R
 
 Ignore += timeseries.tex timeseries.pdf
 timeseries.pdf: timeseries.tex

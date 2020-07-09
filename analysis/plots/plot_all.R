@@ -111,8 +111,6 @@ event_tab2 <- (event_tab
                                   time<=end+time_eps),"deaths")))
 )                   
 
-colvec1 <- colvec1[c("parish","wills","LBoM")]  ## change order
-brkvec <- c("parish","wills","LBoM")
 plot_all <- (ggplot(dd,aes(x=time,y=deaths,colour=source))
     + geom_rect(data=oy_dat,
               aes(group=outbreak.year,
@@ -123,9 +121,9 @@ plot_all <- (ggplot(dd,aes(x=time,y=deaths,colour=source))
               alpha=0.5,colour=NA)
     + geom_line(aes(linetype=source),size=1)
     + geom_point(aes(shape=source),size=0.5)
-    + scale_shape_manual(values=c(parish=NA,wills=NA,LBoM=15),breaks=brkvec)
-    + scale_linetype_manual(values=c(parish=1,wills=1,LBoM=NA),breaks=brkvec)
-    + scale_colour_manual(values=colvec1,breaks=brkvec)
+    + scale_shape_manual(values=c(wills=NA,parish=NA,LBoM=15))
+    + scale_linetype_manual(values=c(wills=1,parish=1,LBoM=NA))
+    + scale_colour_manual(values=colvec1)
     + scale_y_log10(breaks=c(1,10,100,1000,10000))
     + labs(x="date",y="wills or deaths / 4 weeks")
     + facet_grid(.~epoch,scale="free",space="free")

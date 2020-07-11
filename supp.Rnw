@@ -171,6 +171,7 @@ with span=0.5 (shaded regions are 95\% confidence intervals).}
 
 \paragraph{London 1563--1583:} The earliest weekly plague mortality records are tabulated by Creighton \cite{Crei65} for 1563--1564 \cite[p.\,305]{Crei65} and 1578--1583 \cite[p.\,341--344]{Crei65}.
 
+\hypertarget{1593}{}
 \paragraph{London 1593:} The extant records of weekly plague mortality in London in 1593 (\cref{F:plot3sourcesmajors}, second panel) are implausible.  One possibility is that many earlier deaths were added to the counts for two of the weeks in July, but there is no way to be sure.  Creighton \cite[pp.\,351--360]{Crei65} discusses all the data ever found for the epidemic of plague in 1592--1593, states that the weekly data probably originate from marginal notes in a broadside of 1603, and comments (p.\,354) that ``the weekly mortalities in it for those weeks that had little plague are an absurdity for 1593.  Whatever the source of this table, it is not genuine for 1593 \dots''
 
 \paragraph{London 1603--1680:}
@@ -183,7 +184,7 @@ Cummins \emph{et al.} \cite{Cumm+16} obtained parish register data from \href{ht
 
 \subsection{Major vs minor plague epidemics}
 
-\cref{F:all1600s.scaled} shows all weekly reports of plague deaths from the LBoM from 1563 to 1666, scaled by population size (estimated by interpolating from \cref{tab:pop}).  Epidemics with peak plague mortality above 5 per 1000 individuals per week were classified as \emph{major}.  With the exception of 1593 (for which we do not use LBoM data; see above), all these major epidemics peak above 14 on this scale; all the other (\emph{minor}) epidemics peak below 3.  The raw plague mortality data are shown in \cref{F:all1600s}.
+\cref{F:all1600s.scaled} shows all weekly reports of plague deaths from the LBoM from 1563 to 1666, scaled by population size (estimated by interpolating from \cref{tab:pop}).  Epidemics with peak plague mortality above 5 per 1000 individuals per week were classified as \emph{major}.  With the exception of 1593 (for which we do not use LBoM data; see \hyperlink{1593}{above}), all these major epidemics peak above 14 on this scale; all the other (\emph{minor}) epidemics peak below 3.  The raw plague mortality data are shown in \cref{F:all1600s}.
 
 We classify all the 14th century epidemics as `major', although we do not have appropriate data to distinguish major from minor epidemics in this early epoch.  
 

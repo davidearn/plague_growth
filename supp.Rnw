@@ -354,8 +354,8 @@ which, for $aK_{{\rm R},j}\ll1$, simplifies to
 %
 The approximation (appropriate in the limit $aK\to0$) provides a lower
 bound to the true relationship, indicating that rat density would have
-had to increase by at least a factor of \david{???missing number???}
-to account for a similar increase in $\R_0$.
+had to increase by at least a factor of \Sexpr{round(R0ratio,2)}
+to account for a similar increase \eqref{E:Rratio} in $\R_0$.
 
 \cref{F:KvsR} shows the exact relationship \eqref{E:R0ratio} for
 several values of $aK_{{\rm R},1}$, together with the approximation
@@ -411,7 +411,6 @@ In order to determine the relative timing of epidemics recorded by different sou
 \caption{Observed cross-correlation and delay between London Bills of
   Mortality (LBoM) records and other sources. All lags measured in
   weeks.  Rows corresponding to wills data are highlighted in grey.
-  \david{why is the row shading wrong?}
 }
 \begin{center}
   \input{analysis/tables/wills_delay_tab.tex}

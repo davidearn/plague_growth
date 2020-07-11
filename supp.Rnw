@@ -237,7 +237,11 @@ Vertical grey lines indicate the ``outbreak window'' specified in \cref{tab:wind
 %%\clearpage
 \section{Generation interval for bubonic plague}\label{sec:gentime}
 
-For pneumonic plague, sufficiently detailed data exist for a number of modern outbreaks to allow an estimate of the latent and infectious periods (and hence of the generation interval distribution) \cite{GaniLeac04}, which we can use to estimate $\rzero$ for a given value of $r$. Much less data is available for bubonic plague; in addition, the more complex host-vector life cycle of bubonic plague complicates the estimation of the generation interval. However, we can say that the elapsed time between the onset of infectiousness of a rat and the time when a rat in the next infection cycle becomes infectious is:
+For pneumonic plague, sufficiently detailed data exist for a number of
+modern outbreaks to allow an estimate of the latent and infectious
+periods (and hence of the generation interval distribution)
+\cite{GaniLeac04}, which we can use to estimate $\rzero$ for a given
+value of $r$ \cite{WallLips07}. Much less data is available for bubonic plague; in addition, the more complex host-vector life cycle of bubonic plague complicates the estimation of the generation interval. However, we can say that the elapsed time between the onset of infectiousness of a rat and the time when a rat in the next infection cycle becomes infectious is:
 %%
 \begin{equation}
   \begin{split}
@@ -350,8 +354,8 @@ which, for $aK_{{\rm R},j}\ll1$, simplifies to
 %
 The approximation (appropriate in the limit $aK\to0$) provides a lower
 bound to the true relationship, indicating that rat density would have
-had to increase by at least a factor of  to account for a similar
-increase in $\R_0$.
+had to increase by at least a factor of \david{???missing number???}
+to account for a similar increase in $\R_0$.
 
 \cref{F:KvsR} shows the exact relationship \eqref{E:R0ratio} for
 several values of $aK_{{\rm R},1}$, together with the approximation
@@ -360,7 +364,8 @@ p.\,2221]{KeelGill00b} adopt values of $a$ and $K_{{\rm R}}$ that
 yield $aK_{{\rm R}}=10$.  If this is the correct order of magnitude
 for $aK_{{\rm R},1}$ then \cref{E:R0ratio} implies that no increase in
 rat density would be sufficient to yield an increase in $\R_0$ by a
-factor of \Sexpr{round(R0ratio,1)} (or any factor detectably greater than 1).
+factor of \Sexpr{round(R0ratio,2)} (or any factor detectably greater
+than 1).
 
 %
 \begin{figure}[h!]
@@ -386,7 +391,12 @@ changes in epidemic growth rates?
 
 As a vector-borne disease, the rate of bubonic plague spread is primarily affected by the flea-rat ratio.
 In the traditional Ross-MacDonald model for vector-borne epidemics, $\rzero$ is proportional to the square of vector-host ratio because vectors must independently bite hosts twice (once to become infected and a second time to infect a susceptible host). In the rat-flea model, $\rzero$ is instead proportional to $V/H$ because \emph{all} infected fleas on a host disperse and bite other hosts when their initial host dies.
-From Keeling and Gilligan's plague model \cite{KeelGill00b}, the expected change in $r$ for a change in flea-rat ratio from $K_{F0}$ to $K_F$ is $(K_F/K_{F0})^S$, where $S$ is the sensitivity ($\approx 1.5$). Thus in order to a see a fivefold increase in $r$ we would need a change of $5^{(1/S)} \approx \Sexpr{round(5^(1/1.5),1)}$, not in the rat density, but in the number of fleas per rat, which seems unlikely.
+From Keeling and Gilligan's plague model \cite{KeelGill00b}, the
+expected change in $r$ for a change in flea-rat ratio from $K_{\rm
+  F0}$ to $K_{\rm F}$ is $(K_{\rm F}/K_{\rm F0})^S$, where $S$ is the
+sensitivity ($\approx 1.5$). Thus in order to a see a fivefold
+\david{why FIVEfold?  we need only FOURfold; didn't we have a macro
+  for this?} increase in $r$ we would need a change of $5^{(1/S)} \approx \Sexpr{round(5^(1/1.5),1)}$, not in the rat density, but in the number of fleas per rat, which seems unlikely.
 
 As noted in the main text, rat density has an additional, indirect effect on growth rate $r$ and reproduction number $\rzero$: increasing rat density will increase the probability that fleas leaving dying rats will find new, susceptible rat hosts. To crudely estimate the magnitude of this effect, if we again consider Keeling and Gilligan's model \cite{KeelGill00b} then the maximum possible effect of rat density on $\rzero$ by this mechanism would be proportional (if fleas have very low success in finding new rat hosts). That is, in order for $\rzerob$ to increase from $\approx \rzeroearlybest$ in the 14th century to $\approx \rzerolatebest$ in the late epoch, rat density would have to increase by at least $\ratpct\%$. If fleas were already fairly successful at finding hosts in the 14th century, then changes in rat density would be expected to have only a small effect on $\rzero$ in rats.
 
@@ -401,7 +411,9 @@ In order to determine the relative timing of epidemics recorded by different sou
 \begin{table}[h!]
 \caption{Observed cross-correlation and delay between London Bills of
   Mortality (LBoM) records and other sources. All lags measured in
-  weeks.  Rows corresponding to wills data are highlighted in grey.}
+  weeks.  Rows corresponding to wills data are highlighted in grey.
+  \david{why is the row shading wrong?}
+}
 \begin{center}
   \input{analysis/tables/wills_delay_tab.tex}
 \end{center}
@@ -421,7 +433,7 @@ also tried an approach that iterated back and forth between
 Nelder-Mead and BFGS until convergence was achieved or the fit was
 sufficiently stable. We chose \code{nlminb} because it gave the best
 results (highest log likelihood) for point estimates.
-In general, we used the standard link functions proposed by Ma \emph{et al.} \cite{Ma+14}, i.e. fitting most of the parameters (growth rate $r$, background mortality/wills rate $b$, final size $K$, Richards shape parameter $s$) on the log scale with a scaled-tangent link ($\eta = \tan(\pi/2 \cdot (x/2-1))$) for the initial condition $x_0$. However, we found that the scaled-tangent link declined too slowly in the tails, leading to numerical instability; we replaced it with a more standard logit link ($\eta = \log(x/(1-x))$).
+In general, we used the standard link functions proposed by Ma \emph{et al.} \cite{Ma+14}, i.e., fitting most of the parameters (growth rate $r$, background mortality/wills rate $b$, final size $K$, Richards shape parameter $s$) on the log scale with a scaled-tangent link ($\eta = \tan(\pi/2 \cdot (x/2-1))$) for the initial condition $x_0$. However, we found that the scaled-tangent link declined too slowly in the tails, leading to numerical instability; we replaced it with a more standard logit link ($\eta = \log(x/(1-x))$).
 
 With this approach we failed to achieve good (convergent) fits for only three combinations of source and outbreak year, all for minor outbreaks (London bills for 1578 and 1582, Canterbury wills for 1581); these cases are excluded from the tables and figures shown below.
 

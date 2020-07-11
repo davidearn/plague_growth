@@ -394,9 +394,8 @@ In the traditional Ross-MacDonald model for vector-borne epidemics, $\rzero$ is 
 From Keeling and Gilligan's plague model \cite{KeelGill00b}, the
 expected change in $r$ for a change in flea-rat ratio from $K_{\rm
   F0}$ to $K_{\rm F}$ is $(K_{\rm F}/K_{\rm F0})^S$, where $S$ is the
-sensitivity ($\approx 1.5$). Thus in order to a see a fivefold
-\david{why FIVEfold?  we need only FOURfold; didn't we have a macro
-  for this?} increase in $r$ we would need a change of $5^{(1/S)} \approx \Sexpr{round(5^(1/1.5),1)}$, not in the rat density, but in the number of fleas per rat, which seems unlikely.
+sensitivity ($\approx 1.5$). Thus in order to a see a \foldval
+increase in $r$ we would need a change of $4^{(1/S)} \approx \Sexpr{round(4^(1/1.5),1)}$, not in the rat density, but in the number of fleas per rat, which seems unlikely.
 
 As noted in the main text, rat density has an additional, indirect effect on growth rate $r$ and reproduction number $\rzero$: increasing rat density will increase the probability that fleas leaving dying rats will find new, susceptible rat hosts. To crudely estimate the magnitude of this effect, if we again consider Keeling and Gilligan's model \cite{KeelGill00b} then the maximum possible effect of rat density on $\rzero$ by this mechanism would be proportional (if fleas have very low success in finding new rat hosts). That is, in order for $\rzerob$ to increase from $\approx \rzeroearlybest$ in the 14th century to $\approx \rzerolatebest$ in the late epoch, rat density would have to increase by at least $\ratpct\%$. If fleas were already fairly successful at finding hosts in the 14th century, then changes in rat density would be expected to have only a small effect on $\rzero$ in rats.
 

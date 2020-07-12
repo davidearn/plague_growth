@@ -1,46 +1,71 @@
-\documentclass[12pt]{article}
+\documentclass[9pt,twocolumn,twoside,lineno,table]{pnas-new}
+% Use the lineno option to display guide line numbers if required.
 
-\input{nlipreamble.tex}
+\templatetype{pnasresearcharticle} % Choose template 
+% {pnasresearcharticle} = Template for a two-column research article
+% {pnasmathematics} %= Template for a one-column mathematics article
+% {pnasinvited} %= Template for a PNAS invited submission
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% PACKAGES
+\usepackage{xspace}
+
+%% table has been added to the options in the \documentclass in order
+%% for \rowcolors to work properly:
+%%https://tex.stackexchange.com/questions/87197/latex-error-option-clash-for-package-xcolor-for-table
+%%\usepackage[table]{xcolor} % table option allows \rowcolors
 
 %% we need to cross-reference to supp file:
-\usepackage{xr-hyper}
-\externaldocument{supp}
+%%%%\usepackage{xr-hyper}
+%%%%\externaldocument{supp}
+
+%% cleveref package for convenient hyperrefercing/citing:
+\usepackage[nameinlink,capitalize]{cleveref}
+\crefname{equation}{Equation}{Equations}
+\Crefname{equation}{Equation}{Equations}
+\crefname{figure}{Figure}{Figures}
+\Crefname{figure}{Figure}{Figures}
 
 \input{analysis/fits/modeldefs.tex}
 
-\renewcommand{\supp}{\href[page=1]{supp.pdf}{Supplemental Information}\xspace}
 \usepackage{subcaption} % for combdata figure
 \usepackage{rotating}
 %% tables:
 \definecolor[named]{verylightgray}{rgb}{0.93,0.93,0.93}
-
-\newcommand{\mysection}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
-\newcommand{\mysectionsamepage}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
-\newcommand{\mysubsection}[1]{\subsection*{#1}\addcontentsline{toc}{section}{#1}}
-%%
-%% http://tex.stackexchange.com/questions/316510/hyperlink-within-caption-to-a-figure
-%% if used in a caption, need short content \caption[...]{ ... \Methodslink ... }
-\newcommand{\Methodslink}{\hyperlink{Methods}{\emph{Methods}}}
-\newcommand\ttbackslash{{\tt\char`\\}}
-\newcommand{\macro}[1]{{\tt\ttbackslash#1}}
-
 %% avoid need to cross-reference with supp file by explicitly
 %% including newlabel commands from supp.aux here. 
 \input{supp_crossrefs.tex}
 
+%% MACROS
+\newcommand{\Methodslink}{\hyperlink{Methods}{\emph{Methods}}}
+\newcommand{\supp}{\href[page=1]{supp.pdf}{Supplemental Information}\xspace}
+\newcommand{\R}{{\mathcal R}} % reproduction number
+\newcommand{\Zp}{\ensuremath{Z_{\mbox{\tiny P}}}\xspace}
+\newcommand{\Zb}{\ensuremath{Z_{\mbox{\tiny B}}}\xspace}
+\newcommand{\rzerop}{\ensuremath{{\mathcal R}_{0,\mbox{\tiny P}}}\xspace}
+\newcommand{\rzerob}{\ensuremath{{\mathcal R}_{0,\mbox{\tiny B}}}\xspace}
+\newcommand{\gentime}{T_{\mbox{\tiny g}}}
+\newcommand{\ypestis}{\emph{Y.~pestis}\xspace}
+\newcommand{\ie}{\emph{i.e., }}
+\newcommand{\eg}{\emph{e.g., }}
+\newcommand{\ETAL}{\textit{et al}.\xspace} % \etal already defined
+
+%% journal names
+\def\LancetID{{\it Lancet Infectious Diseases\/}}
+\def\PNAS{{\it PNAS -- Proceedings of the National Academy of Sciences of the
+U.S.A.}}
+\def\NEJM{{\it New England Journal of Medicine\/}}
+\def\Interface{{\it Journal of the Royal Society Interface\/}}
+\def\ProcB{{\it Proceedings of the Royal Society of London, Series\/ \rm B}}
+\def\BMB{{\it Bulletin of Mathematical Biology\/}}
+
 %% Main MS text
 \input{ms_text.tex}
 
-\let\OLDthebibliography\thebibliography
-\renewcommand\thebibliography[1]{
-  \OLDthebibliography{#1}
-  \setlength{\parskip}{3pt}
-  \setlength{\itemsep}{3pt plus 0.3ex}
-}
-%%\baselineskip=0pt
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bibliographystyle{pnas-new}
+% Bibliography
 \bibliography{plague}
-\addcontentsline{toc}{section}{References}
 
 \end{document}

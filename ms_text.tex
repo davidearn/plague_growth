@@ -1,48 +1,51 @@
 \title{Acceleration of plague outbreaks in the second pandemic}
 
-\author{David J.\,D.\ Earn$^{a,b,c}$, 
-Junling Ma$^{f}$, 
-Hendrik N.\ Poinar$^{b,c,d,e}$,\\
-Jonathan Dushoff$^{a,b,c}$,
-and Benjamin M.\ Bolker$^{a,b,c}$\\
-\href{mailto:earn@math.mcmaster.ca}{\tt earn@math.mcmaster.ca}\\
-\small $^a$Department of Mathematics \& Statistics, $^b$Department of Biology, \\
-\small $^c$Michael G.\ deGroote Institute for Infectious Disease Research,\\
-\small $^d$McMaster Ancient DNA Centre, Department of Anthropology,\\
-\small and $^e$Department of Biochemistry,\\
-\small McMaster University, 1280 Main Street West, Hamilton, ON, L8S 4K1, Canada;\\
-\small $^f$Department of Mathematics \& Statistics, University of Victoria, Victoria, BC, Canada}
+% Use letters for affiliations, numbers to show equal authorship (if applicable) and to indicate the corresponding author
+\author[a,b,c,1]{David J.\,D.\ Earn}
+\author[f]{Junling Ma} 
+\author[b,c,d,e]{Hendrik Poinar}
+\author[a,b,c]{Jonathan Dushoff}
+\author[a,b,c]{Benjamin M.\ Bolker}
+
+\affil[a]{Department of Mathematics \& Statistics}
+\affil[b]{Department of Biology}
+\affil[c]{Michael G.\ deGroote Institute for Infectious Disease Research}
+\affil[d]{McMaster Ancient DNA Centre, Department of Anthropology}
+\affil[e]{Department of Biochemistry, McMaster University, 1280 Main Street West, Hamilton, ON, L8S 4K1, Canada}
+\affil[f]{Department of Mathematics \& Statistics, University of Victoria, Victoria, BC, Canada}
+
+% Please give the surname of the lead author for the running footer
+\leadauthor{Earn} 
+
+% Please add here a significance statement to explain the relevance of your work
+\significancestatement{Epidemics of plague devastated Europe's population throughout the Medieval and Renaissance periods.  Genetic studies of small numbers of skeletal remains indicate that the causative agent of all these epidemics was the bacterium \emph{Yersinia pestis}, but such analyses cannot identify overall patterns of transmission dynamics.
+Analysis of thousands of archival records from London, England, reveal that plague epidemics spread much faster in the 17th century than in the 14th century.}
+
+% Please include corresponding author, author contribution and author declaration information
+\authorcontributions{{\color{red}Please provide details of author contributions here.}}
+%%\authordeclaration{{\color{red}Please declare any conflict of interest here.}}
+%%\equalauthors{\textsuperscript{1}A.O.(Author One) and A.T. (Author Two) contributed equally to this work (remove if not applicable).}
+\correspondingauthor{\textsuperscript{1}To whom correspondence should be addressed. E-mail: earn@math.mcmaster.ca}
+
+% Keywords are not mandatory, but authors are strongly encouraged to provide them. If provided, please include two to five keywords, separated by the pipe symbol, e.g:
+\keywords{plague $|$ London $|$ epidemic growth rate $|$ reproduction number $|$ SARS-CoV-2 $|$ COVID-19}
+
+\begin{abstract}
+Historical records reveal the temporal patterns of a sequence of plague epidemics in London, England, from the 14th to 17th centuries.  Analysis of these records shows for the first time that later epidemics spread significantly faster (``accelerated'').  Between the Black Death of 1348 and the later epidemics that culminated with the Great Plague of 1665, we estimate that the epidemic growth rate increased \foldval.
+Currently available data do not provide enough information to infer the mode of plague transmission in any given epidemic; nevertheless, order-of-magnitude estimates of epidemic parameters suggest that the observed slow growth rates in the 14th century are inconsistent with direct (pneumonic) transmission.  
+We discuss the potential roles of demographic and ecological factors, such as climate change or human or rat population density, in driving the observed acceleration.
+\end{abstract}
+
+\dates{This manuscript was compiled on \today}
+\doi{\url{www.pnas.org/cgi/doi/10.1073/pnas.XXXXXXXXXX}}
 
 \begin{document}
 
-\linenumbers
-
 \maketitle
+\thispagestyle{firststyle}
+\ifthenelse{\boolean{shortarticle}}{\ifthenelse{\boolean{singlecolumn}}{\abscontentformatted}{\abscontent}}{}
 
-%%\begin{abstract}
-{\bfseries
-\noindent
-Historical records reveal the temporal patterns of a sequence of plague epidemics in London, England, from the 14th to 17th centuries.  Analysis of these records shows for the first time that later epidemics spread significantly faster (``accelerated'').  Between the Black Death of 1348 and the later epidemics that culminated with the Great Plague of 1665, we estimate that the epidemic growth rate increased \foldval.
-%%[\rdiffest $\times$, 95\% CI: \rdifflwr $\times$ to \rdiffupr $\times$].  
-%%The cause of this change is unknown; despite rapid recent advances in paleogenomics, it is hard to confirm or reject the possibility of functional evolutionary changes in circulating strains of the plague bacterium \ypestis over this time period.
-Currently available data do not provide enough information to infer the mode of plague transmission in any given epidemic; nevertheless, order-of-magnitude estimates of epidemic parameters suggest that the observed slow growth rates in the 14th century are inconsistent with direct (pneumonic) transmission.  
-We discuss the potential roles of demographic and ecological factors, such as climate change or human or rat population density, in driving the observed acceleration.
-}  
-%%\end{abstract}
-
-\bigskip
-
-\leftline{plague $|$ London $|$ epidemic growth rate $|$ reproduction number $|$ SARS-CoV-2 $|$ COVID-19}
-
-\bigbreak
-
-\noindent\fbox{\parbox{0.98\textwidth}{{\bfseries Significance Statement:} 
-
-Epidemics of plague devastated Europe's population throughout the Medieval and Renaissance periods.  Genetic studies of small numbers of skeletal remains indicate that the causative agent of all these epidemics was the bacterium \emph{Yersinia pestis}, but such analyses cannot identify overall patterns of transmission dynamics.
-Analysis of thousands of archival records from London, England, reveal that plague epidemics spread much faster in the 17th century than in the 14th century.}}
-
-\bigbreak
-
+% If your first paragraph (i.e. with the \dropcap) contains a list environment (quote, quotation, theorem, definition, enumerate, itemize...), the line after the list may have some extra indentation. If this is the case, add \parshape=0 to the end of the list environment.
 \dropcap{P}lague epidemics have afflicted human populations since at least the 6th century \cite{McNe76,Wagn+14}.  These events have had dramatic and long-lasting effects on human demography and behaviour, especially those outbreaks associated with the ``second pandemic'' (14th--19th centuries) in Europe and Asia \cite{Pepy1669,Lath85,Defo1722,McNe76}, and have inspired many
 theoretical studies of the ecology and evolution of infectious disease \cite{KermMcKe27,AndeMay91,KeelGill00,Baca12,Silv16,LewnTown16,Yue+16,Dean+18}.
 We are now in the third pandemic (Modern Plague), with outbreaks continuing to occur in some parts of the world \cite{PerrFeth97,Neer+10,WHO10,ECDC17,Robe17}. Plague also remains a source of concern due to the bioterror potential of the causative agent, \emph{Yersinia~pestis} \cite{Ligo06,CDCplagueEmergencyFAQ}. 
@@ -58,7 +61,7 @@ from a 300-year span of plague outbreaks in the same location (London), revealin
 
 We quantify this change without making any assumptions about the underlying transmission processes, exploiting methodology that we have developed previously for this purpose \cite{Ma+14}.  We then consider how this inference can contribute to the debate concerning whether plague transmission was primarily indirect (via rat fleas) or direct (pneumonic human-to-human).  We argue that strictly pneumonic transmission in the 14th century is implausible, but that beyond this the best that can be done at present is to highlight the biological complexities and uncertainties that limit the potential for further inferences.
 
-\mysection{Data}
+\section*{Data}
 
 The city of London, England, is unusual in the extent to which patterns of death and disease can be reconstructed from extant documents. We have analyzed three sources of data (\cref{F:plot3sources}):
 \begin{description}
@@ -84,7 +87,7 @@ The LBoM indicate that there were 18 other plague epidemics in London between 15
 
 %
 \newcommand{\pixht}{0.3\textheight}
-\begin{figure}
+\begin{figure*}
 \begin{center}
 \mbox{
 \hspace{1.2cm}
@@ -114,33 +117,33 @@ and weekly plague deaths listed in the LBoM \cite{Crei65}.
 Major plague years are highlighted in yellow.  Aside from these and various minor plague years, there are notably unusual patterns during an epidemic of ``sweating sickness'' in 1551 \cite[p.\,70]{Slac90}, the ``influenza'' epidemic of 1557--9 \cite[p.\,70]{Slac90} (which coincided with the end of the reign of ``Bloody'' Mary~I and the ascension of Elizabeth~I in 1558 [indicated by a crown icon]), and the absence of a monarch during the Interregnum from 30 January 1649 to 29 May 1660.
 }
 \label{F:plot3sources}
-\end{figure}
+\end{figure*}
 %
 
-\mysection{Approach}
+\section*{Approach}
 
 \paragraph{Estimation of epidemic growth rates}
 
-While our collection of high-resolution mortality time series during plague epidemics allows us to estimate epidemic growth rates, we are constrained by the limitations of our data---the time series for each epidemic are short and noisy, especially during the 14th century (\eg the epidemics of 1368 and 1375 peaked at a total of 5 wills written per week). Thus we chose to use simple phenomenological models with a small number of parameters that can be fitted to short time series (starting size, growth rate, and total size: see \Methodslink), and do not attempt to separate different sources of variability or estimate the influence of various mechanistic processes (King \etal's exhortation to use epidemic models that separate process from observation noise \cite{King+2015} applies primarily to forecasting, which we are not attempting).
-Furthermore, we primarily consider the initial growth rate $r$, which---unlike the basic reproduction number $\rzero$---can be estimated reliably from mortality data alone without any knowledge of the disease characteristics or natural history \cite{Ma+14}.
+While our collection of high-resolution mortality time series during plague epidemics allows us to estimate epidemic growth rates, we are constrained by the limitations of our data---the time series for each epidemic are short and noisy, especially during the 14th century (\eg the epidemics of 1368 and 1375 peaked at a total of 5 wills written per week). Thus we chose to use simple phenomenological models with a small number of parameters that can be fitted to short time series (starting size, growth rate, and total size: see \Methodslink), and do not attempt to separate different sources of variability or estimate the influence of various mechanistic processes (King \ETAL's exhortation to use epidemic models that separate process from observation noise \cite{King+2015} applies primarily to forecasting, which we are not attempting).
+Furthermore, we primarily consider the initial growth rate $r$, which---unlike the basic reproduction number $\R_0$---can be estimated reliably from mortality data alone without any knowledge of the disease characteristics or natural history \cite{Ma+14}.
 
 We estimate the epidemic growth rate for each epidemic as the maximum likelihood estimate of the initial growth rate of a logistic function fitted to the cumulative death curve (using first differences to avoid over-confidence; see \Methodslink\ for more detail), along with likelihood profile confidence intervals (CIs). To summarize the overall difference between epochs, we then use the estimates for each epidemic as observations in a linear mixed model including fixed effects of epoch (``early''/14th c.\ \emph{vs.}\ ``late''/16th-17th c.{}) and data source, and a random effect of outbreak year (see \hyperlink{outbreak.year}{below}), where each estimate was weighted by its certainty.
 
 Finally, to robustly quantify the statistical significance of the difference between epochs, we ran a permutation test. We computed the null distribution of the between-epoch difference in growth rate by scrambling the estimates and associated CIs randomly across epochs. For each of the 126 possible permutations, we refitted the mixed model and extracted the estimated among-epoch difference in growth rate.
 
-\paragraph{Estimating $\rzero$ and attack rate}
+\paragraph{Estimating $\R_0$ and attack rate}
 
-Our analysis focuses on the epidemic growth rate $r$, rather than the more commonly investigated basic reproduction number $\rzero$ (the expected number of secondary cases caused by a primary case in a completely susceptible population \cite{AndeMay91}), because estimates of $\rzero$ depend on information about the life history of the pathogen as well as on the epidemic curve itself \cite{WallLips07}. However, if we can estimate $\rzero$ then we can predict epidemic outcomes that we are unable to predict from $r$ alone; then, by comparing observed with theoretical outcomes under different scenarios, we can make inferences about modes of transmission.
+Our analysis focuses on the epidemic growth rate $r$, rather than the more commonly investigated basic reproduction number $\R_0$ (the expected number of secondary cases caused by a primary case in a completely susceptible population \cite{AndeMay91}), because estimates of $\R_0$ depend on information about the life history of the pathogen as well as on the epidemic curve itself \cite{WallLips07}. However, if we can estimate $\R_0$ then we can predict epidemic outcomes that we are unable to predict from $r$ alone; then, by comparing observed with theoretical outcomes under different scenarios, we can make inferences about modes of transmission.
 
-In particular, if the host population is homogeneously mixed, we can use $\rzero$ to estimate the expected final size $Z$ (the proportion of the population infected by the end of an epidemic, also called the \emph{attack rate}) \cite{KermMcKe27,MaEarn06}. The \emph{observed attack rate} based on mortality records depends in turn on the fraction of infected individuals who die from disease. We can thus compare theoretical expectations of observed attack rates under different transmission modes with historical information about observed attack rates (see \hyperlink{implications}{Implications}).
+In particular, if the host population is homogeneously mixed, we can use $\R_0$ to estimate the expected final size $Z$ (the proportion of the population infected by the end of an epidemic, also called the \emph{attack rate}) \cite{KermMcKe27,MaEarn06}. The \emph{observed attack rate} based on mortality records depends in turn on the fraction of infected individuals who die from disease. We can thus compare theoretical expectations of observed attack rates under different transmission modes with historical information about observed attack rates (see \hyperlink{implications}{Implications}).
 
-We can use the distribution of the generation interval (the times elapsed between the moment a host is infected and the times at which they infect others) to compute $\rzero$ from $r$ \cite{WallLips07}. If we know only the \emph{mean} generation interval $\gentime$, we can still approximate $\rzero \approx r \gentime +1$, by assuming that the generation intervals are exponentially distributed; this approximation underestimates $\rzero$ in the typical case where the generation interval distribution is less variable than an exponential distribution with the same mean.
+We can use the distribution of the generation interval (the times elapsed between the moment a host is infected and the times at which they infect others) to compute $\R_0$ from $r$ \cite{WallLips07}. If we know only the \emph{mean} generation interval $\gentime$, we can still approximate $\R_0 \approx r \gentime +1$, by assuming that the generation intervals are exponentially distributed; this approximation underestimates $\R_0$ in the typical case where the generation interval distribution is less variable than an exponential distribution with the same mean.
 
-Beyond the information on generation interval that we use to derive $\rzero$ from $r$, the observed attack rate depends on additional characteristics of an epidemic. If the population does not mix homogeneously, the final size will typically decrease (\eg \cite[Fig.\,6]{Roll+15}). Since the \emph{case fatality proportion} (CFP, the proportion of plague cases who die) is not 100\%, the observed attack rate is less than the final size. Observed attack rates also decrease if some individuals are infected without showing symptoms (asymptomatic infections) \cite{Mars+67}, or without symptoms identified as plague (sub-clinical infections). Finally, the observed attack rate depends on the initial proportion of the population susceptible, which will be lower if some individuals have previously acquired immunity after previously non-fatal plague infections. 
+Beyond the information on generation interval that we use to derive $\R_0$ from $r$, the observed attack rate depends on additional characteristics of an epidemic. If the population does not mix homogeneously, the final size will typically decrease (\eg \cite[Fig.\,6]{Roll+15}). Since the \emph{case fatality proportion} (CFP, the proportion of plague cases who die) is not 100\%, the observed attack rate is less than the final size. Observed attack rates also decrease if some individuals are infected without showing symptoms (asymptomatic infections) \cite{Mars+67}, or without symptoms identified as plague (sub-clinical infections). Finally, the observed attack rate depends on the initial proportion of the population susceptible, which will be lower if some individuals have previously acquired immunity after previously non-fatal plague infections. 
 
-We can use independent estimates of the generation interval to estimate $\rzero$ (and hence the theoretical attack rate) for London epidemics under different transmission modes.  Given the limited information that we have, we consider the additional (extreme) assumptions that \hypertarget{4assumptions}{} (1) the population was homogeneously mixed; (2) the population was initially 100\% susceptible; (3) there were no asymptomatic infections; and (4) all infected individuals died (\ie the CFP was 100\%). All of these assumptions increase the observed attack rate (as detected from wills or deaths), so we can calculate an upper bound on the total mortality we would expect to observe in an epidemic with a particular transmission mode.
+We can use independent estimates of the generation interval to estimate $\R_0$ (and hence the theoretical attack rate) for London epidemics under different transmission modes.  Given the limited information that we have, we consider the additional (extreme) assumptions that \hypertarget{4assumptions}{} (1) the population was homogeneously mixed; (2) the population was initially 100\% susceptible; (3) there were no asymptomatic infections; and (4) all infected individuals died (\ie the CFP was 100\%). All of these assumptions increase the observed attack rate (as detected from wills or deaths), so we can calculate an upper bound on the total mortality we would expect to observe in an epidemic with a particular transmission mode.
 
-\mysectionsamepage{Results}
+\section*{Results}
 
 The fitted models do as good a job as one could hope for in capturing the initial patterns of epidemic growth evident in the noisy will counts, and agree very well with the patterns of growth in the mortality time series that are available in the later epoch (\cref{F:timeseries}).
 
@@ -150,7 +153,7 @@ The growth rates increased \foldval in the late \emph{vs.}\ early epochs: $r$ in
 
 %
 %%\begin{figure}[h!]
-\begin{figure}
+\begin{figure*}
 \begin{center}
 \includegraphics[width=\textwidth]{analysis/plots/timeseries.pdf}
 %% \includegraphics[width=\textwidth]{timeseries.eps}
@@ -161,36 +164,35 @@ The growth rates increased \foldval in the late \emph{vs.}\ early epochs: $r$ in
   In 14th c. data (top row), zero-count weeks are shown along the bottom edge of the graph.
 }
 \label{F:timeseries}
-\end{figure}
+\end{figure*}
 %
 
 %
 %%\begin{figure}[h!]
-\begin{figure}
+\begin{figure*}
 \begin{center} 
 \includegraphics[width=6.5in]{analysis/plots/combdata.pdf} 
 %% \includegraphics[width=6.5in]{combdata.eps} 
-\end{center} \caption[Estimated initial growth rates]{Estimated initial growth rates ($r$) and 95\% profile CIs on a logarithmic scale, for each of the epidemics shown in \cref{F:timeseries}.  Center panels show mixed-model estimates (see \Methodslink) of overall average growth rate for each epoch (early:\ 14th c.\ \emph{vs.}\ late:\ 16th-17th c.{})\ and data source.  To aid interpretation, the additional vertical scales show the implied intrinsic reproductive number ($\rzerop$) and epidemic final size ($\Zp$) under the assumption that the generation interval distribution \cite{WallLips07} was the same as that estimated from 20th century pneumonic plague epidemics \cite{GaniLeac04}. All estimates and CIs are listed in \cref{tab:params} (which also lists the associated doubling times).}
+\end{center} \caption[Estimated initial growth rates]{Estimated initial growth rates ($r$) and 95\% profile CIs on a logarithmic scale, for each of the epidemics shown in \cref{F:timeseries}.  Center panels show mixed-model estimates (see \Methodslink) of overall average growth rate for each epoch (early:\ 14th c.\ \emph{vs.}\ late:\ 16th-17th c.{})\ and data source.  To aid interpretation, the additional vertical scales show the implied intrinsic reproductive number ($\R_0p$) and epidemic final size ($\Zp$) under the assumption that the generation interval distribution \cite{WallLips07} was the same as that estimated from 20th century pneumonic plague epidemics \cite{GaniLeac04}. All estimates and CIs are listed in \cref{tab:params} (which also lists the associated doubling times).}
 \label{F:combdata}
-\end{figure}
+\end{figure*}
 %
 
-\begin{table}[h!] 
-  \caption[Estimated $r$ and $1/r$]{Maximum likelihood estimates (MLEs) of the initial exponential growth rate ($r$) and doubling time ($(\log2)/r$) with their 95\% confidence intervals (CIs), obtained from the time series shown in \cref{F:timeseries} (see \Methodslink).  The goodness of fit measure ($R^2$) is the proportional reduction in the mean squared error, \ie $1-d^2/\sigma^2$ where $d^2$ is the model mean squared error and $\sigma^2$ is the (population) variance of the data; predictions and observations are aggregated to weekly before computing the $R^2$ for wills, for consistency among data sources. The implied basic reproduction numbers ($\rzerop$) and attack rates ($\Zp$), assuming the generation interval distribution for Modern pneumonic plague \cite{GaniLeac04}, are also shown.
+%%\begin{table}[h!] 
+\begin{table*}
+  \caption[Estimated $r$ and $1/r$]{Maximum likelihood estimates (MLEs) of the initial exponential growth rate ($r$) and doubling time ($(\log2)/r$) with their 95\% confidence intervals (CIs), obtained from the time series shown in \cref{F:timeseries} (see \Methodslink).  The goodness of fit measure ($R^2$) is the proportional reduction in the mean squared error, \ie $1-d^2/\sigma^2$ where $d^2$ is the model mean squared error and $\sigma^2$ is the (population) variance of the data; predictions and observations are aggregated to weekly before computing the $R^2$ for wills, for consistency among data sources. The implied basic reproduction numbers ($\R_0p$) and attack rates ($\Zp$), assuming the generation interval distribution for Modern pneumonic plague \cite{GaniLeac04}, are also shown.
 All MLEs and associated CIs are shown in \cref{F:combdata}.
 }
 \begin{center}
   \footnotesize
-  %%\rowcolors{2}{white}{verylightgray}
-  \rowcolors{2}{white}{gray}
+  \rowcolors{2}{white}{verylightgray}
   \input{analysis/tables/params.tex}
 
 \end{center}
 \label{tab:params}
-\end{table}
+\end{table*}
 
-\FloatBarrier
-\mysection{Discussion}
+\section*{Discussion}
 
 Plague epidemics in London appear to have been faster in the 16th-17th centuries than in the 14th. Our analysis shows that this difference is very likely real, rather than driven by changes in the types of documentary evidence that are available; in particular, we have shown that inferences from will counts are consistent with those from death counts when both are available, in the 17th century.
 
@@ -254,7 +256,7 @@ approximate generation interval for bubonic plague give estimated $\rzerob=\rzer
 
 \paragraph{Other possibilities.}
 
-As mentioned above, it is possible that human ectoparasites could have supported indirect plague transmission \cite{Dean+18,Laro+18}. While the biological details of this transmission mode are still uncertain, we can guess that the generation interval of this transmission mode would be intermediate between direct and indirect rat-flea transmission, giving rise to estimates of $\rzero$ and $Z$ intermediate between those discussed above. Investigations of plague biology in fleas have also raised the possibility that rat transmission may have shorter generation intervals than previously thought, which would lower estimated $\rzero$ values for bubonic plague \cite{Eise+06,Eise+07} (but cf.~\cite{Hinn+17}).
+As mentioned above, it is possible that human ectoparasites could have supported indirect plague transmission \cite{Dean+18,Laro+18}. While the biological details of this transmission mode are still uncertain, we can guess that the generation interval of this transmission mode would be intermediate between direct and indirect rat-flea transmission, giving rise to estimates of $\R_0$ and $Z$ intermediate between those discussed above. Investigations of plague biology in fleas have also raised the possibility that rat transmission may have shorter generation intervals than previously thought, which would lower estimated $\R_0$ values for bubonic plague \cite{Eise+06,Eise+07} (but cf.~\cite{Hinn+17}).
 
 \subsection*{COVID-19 context}
 
@@ -272,51 +274,53 @@ We considered the implications of our estimated growth rates with respect to the
 We have created and assembled---and made available with this paper---machine-readable databases comprising thousands of handwritten records spanning more than 300 years.  People living in London in 1348 or 1665 could not have imagined how these records might be used hundreds of years later.  The time series that have emerged have allowed us to reveal and characterize large changes in patterns of infectious disease transmission.  In concert with other forms of information \cite{Cumm+16,Abbo17}, these records should continue to contribute to a broader and more insightful view of population-level processes in early eras of history.
 
 \hypertarget{Methods}{}
-\mysectionsamepage{Methods}
+%%\section*{Methods}
+\matmethods{
 
-\paragraph{Growth rate estimates}
+\subsection*{Growth rate estimates}
 
 We have previously developed methods to 
 use mortality data to estimate initial epidemic growth rates \cite{Ma+14}.
-The na\"ive approach of fitting a straight line to the relationship between logarithmic death counts and time at the beginning of the epidemic depends sensitively on the fitting window and produces overly narrow confidence intervals.  Instead, we use maximum likelihood estimation to fit a curve that resembles the shape of a deterministic epidemic model (see \hyperlink{phenmod}{Phenomenological Model} below) and compute likelihood profile confidence intervals \cite{Bolk08}; this approach yields robust estimates of initial growth rates and accurate assessments of uncertainty.  All variation around the fitted line is assumed to arise from  observation errors.  See Ma \etal \cite{Ma+14} for methodological details. 
+The na\"ive approach of fitting a straight line to the relationship between logarithmic death counts and time at the beginning of the epidemic depends sensitively on the fitting window and produces overly narrow confidence intervals.  Instead, we use maximum likelihood estimation to fit a curve that resembles the shape of a deterministic epidemic model (see \hyperlink{phenmod}{Phenomenological Model} below) and compute likelihood profile confidence intervals \cite{Bolk08}; this approach yields robust estimates of initial growth rates and accurate assessments of uncertainty.  All variation around the fitted line is assumed to arise from  observation errors.  See Ma \ETAL \cite{Ma+14} for methodological details. 
 
-In contrast to Ma \etal \cite{Ma+14}, who assumed a Poisson error model to fit simulations that were themselves generated with that assumption, the results shown here applied a negative binomial error model, which allows for the broader range of variation found in real data.  We initially tried both logistic and Richards \cite{Rich59} models for the epidemic curve (\ie the expected mean of the data) and both Poisson and negative binomial models for the distribution around the mean. These variants gave qualitatively similar conclusions about the pattern of growth rates, but we found that the Richards model was too unstable to fit reliably across all epidemics, so we reverted to fitting the logistic model for all epidemics. Similarly, the negative binomial model gave unstable results when the distributions were too close to Poisson; when the negative binomial dispersion parameter was estimated as $> 10^4$, we reverted to a Poisson fit (see \supp\ for further details of the optimization).
+In contrast to Ma \ETAL \cite{Ma+14}, who assumed a Poisson error model to fit simulations that were themselves generated with that assumption, the results shown here applied a negative binomial error model, which allows for the broader range of variation found in real data.  We initially tried both logistic and Richards \cite{Rich59} models for the epidemic curve (\ie the expected mean of the data) and both Poisson and negative binomial models for the distribution around the mean. These variants gave qualitatively similar conclusions about the pattern of growth rates, but we found that the Richards model was too unstable to fit reliably across all epidemics, so we reverted to fitting the logistic model for all epidemics. Similarly, the negative binomial model gave unstable results when the distributions were too close to Poisson; when the negative binomial dispersion parameter was estimated as $> 10^4$, we reverted to a Poisson fit (see \supp\ for further details of the optimization).
 
-In order to summarize the differences between epochs, we fitted a linear mixed model (using the \code{glmmTMB} package in R \cite{Brook+17}) to the estimates of log growth rates. To account for differing precision of the estimates across epidemics, we approximate the standard error of the estimates as the width of the 95\% confidence interval divided by 3.92 (the width in standard errors of a 95\% Normal CI); square it to find the variance; and scale the residual variance for each epidemic curve by this observed variance. This procedure is equivalent to weighting each epidemic curve by the inverse of its variance. We quantified the difference in epidemic between epochs based on the predicted difference in $\log(r)$ between wills in each epoch.
+In order to summarize the differences between epochs, we fitted a linear mixed model (using the \texttt{glmmTMB} package in R \cite{Brook+17}) to the estimates of log growth rates. To account for differing precision of the estimates across epidemics, we approximate the standard error of the estimates as the width of the 95\% confidence interval divided by 3.92 (the width in standard errors of a 95\% Normal CI); square it to find the variance; and scale the residual variance for each epidemic curve by this observed variance. This procedure is equivalent to weighting each epidemic curve by the inverse of its variance. We quantified the difference in epidemic between epochs based on the predicted difference in $\log(r)$ between wills in each epoch.
 
 The permutation test $p$-value (0.016) reinforces our confidence that late-epoch epidemics were faster than early-epoch epidemics; however, since it is larger than the parametric $p$-values derived from the model fit (which are $< 0.001$), it suggests that the confidence intervals shown in \cref{F:combdata} may be too narrow.
 
 In light of recent work investigating the possibility of initial epidemic growth that is sub-exponential, we also considered fits based on the more general growth model of Chowell and co-workers \cite{Vibo+16,Chow+16,ChamEarn16}.  This approach leads to slightly slower initial growth estimates, but does not change our conclusion that the later plagues were much faster than the earlier plagues.
 
 \hypertarget{phenmod}{}
-\paragraph{Phenomenological model}
+\subsection*{Phenomenological model}
 
-Following Ma \etal \cite{Ma+14}, we model the \emph{cumulative} mortality curve (or will-accumulation curve; henceforth we refer to wills or death records as ``mortality'') using a logistic model with an added baseline linear growth rate,
+Following Ma \ETAL \cite{Ma+14}, we model the \emph{cumulative} mortality curve (or will-accumulation curve; henceforth we refer to wills or death records as ``mortality'') using a logistic model with an added baseline linear growth rate,
 %
 \begin{linenomath*}
 \begin{equation}
-c(t) = b t + \frac{K}{\big[1 + \big((K/c_0) - 1\big)e^{-rt}\big]} \,.
+%%c(t) = b t + \frac{K}{\big[1 + \big((K/c_0) - 1\big)e^{-rt}\big]} \,.
+c(t) = b t + \frac{K}{1 + [(K/c_0) - 1]e^{-rt}} \,.
 \label{E:Richards}
 \end{equation}
 \end{linenomath*}
 %
 Here, $c_0=c(0)$ is the initial cumulative mortality, $r$ is the initial exponential growth rate, and $K$ is the final size of the epidemic ($\lim_{t\to\infty}[c(t)-bt]$). In the fitting procedure we use the unitless parameter $x_0=c_0/K$; all parameters are fitted on a transformed, unconstrained scale (\ie $\log(r)$, $\log(K)$, and $\textrm{arctanh}(x_0)$). The derivative $c'(t)$ is the instantaneous mortality rate.  To avoid the inherent correlations between observations in the cumulative curve, we fit the observed data to the differences from (1): \mbox{$\Delta c(t) = c(t+\Delta t)-c(t)$}, where $\Delta t$ is the observation interval (one day for wills and one week for mortality data). The parameter $b$ represents baseline (non-plague) mortality. For the LBoM fits we set $b=0$ (since the LBoM data include only plague mortality); for the wills and parish-register fits we estimated $b$ by computing the average observed mortality rate over the two years preceding and following the outbreak window.
 
-As discussed above, we initially fitted a Richards model, which extends the logistic equation with a shape parameter, but found that we could not get stable fits to the smallest/noisiest epidemics; we never found qualitative differences between growth rates estimated from logistic and Richards fits.  Ma \etal found that a \emph{delayed} logistic curve, which adds an exponentially distributed delay between infection and mortality, estimated growth rates from mortality curves with less bias. However, the delay between infection and mortality in our data is extremely uncertain---it would represent another parameter that would have to be estimated from noisy data. For wills data, the delay could even be negative, \ie wills could have been written out of fear of \emph{future} infection. Furthermore, because we found little difference between the Richards and logistic fits---which Ma \etal found to have opposite biases---growth rates estimated by these two methods are likely to bracket the growth rate estimated by the delayed logistic.
+As discussed above, we initially fitted a Richards model, which extends the logistic equation with a shape parameter, but found that we could not get stable fits to the smallest/noisiest epidemics; we never found qualitative differences between growth rates estimated from logistic and Richards fits.  Ma \ETAL found that a \emph{delayed} logistic curve, which adds an exponentially distributed delay between infection and mortality, estimated growth rates from mortality curves with less bias. However, the delay between infection and mortality in our data is extremely uncertain---it would represent another parameter that would have to be estimated from noisy data. For wills data, the delay could even be negative, \ie wills could have been written out of fear of \emph{future} infection. Furthermore, because we found little difference between the Richards and logistic fits---which Ma \ETAL found to have opposite biases---growth rates estimated by these two methods are likely to bracket the growth rate estimated by the delayed logistic.
 
-\paragraph{Fitting windows}
+\subsection*{Fitting windows}
 
 How well a given model can fit a time series may depend on the time window used for fitting \cite{ChamEarn16}.  In order to avoid choosing a window separately for each individual epidemic, we considered window selection criteria that could be applied uniformly to all epidemics without first examining the data. In all cases we defined the end of the fitting window to be one data point past the observed peak date (the date of maximum observed deaths).  For wills and parish registers, we began the fitting window at the start of the outbreak window (see \hyperlink{outbreak.year}{below}); for LBoM data, we started immediately \emph{after} the last observation before the peak for which the mortality rate was $\le 1/50$ of the peak mortality rate. For two epidemics for which the data are particularly noisy (1593 and 1625), we were unable to find any simple heuristic that would automatically choose a good fitting window, and resorted to choosing the fitting window by eye.
 
 The fitting windows used for all our fits are listed in \supp \cref{tab:windows,tab:windowsminor}. Although we experimented with different methods for determining the fitting window (e.g., starting the window from the observation after the last local minimum before the peak, or based on a threshold of $1/100$ of the peak mortality rate), we emphasize that our choices were entirely determined by seeking ``good'' fits (judged by visual inspection), and not by the pattern of estimated initial growth rates. Moreover, our conclusion that later plagues were much faster than the earlier plagues is robust to choices we made about window selection.
 
 \hypertarget{outbreak.year}{}
-\paragraph{Outbreak years and outbreak windows}
+\subsection*{Outbreak years and outbreak windows}
 
 We refer to the calendar year in which an epidemic begins as the \emph{outbreak year}.  For each epidemic, we define an \emph{outbreak window} that is the maximum time interval to be considered for fitting.  For the 14th century epidemics, we defined the outbreak window to be the full outbreak year, except for outbreak year 1348 when the epidemic spanned both 1348 and 1349 (so we took the outbreak window to be the full length of both calendar years).  For the late epoch epidemics, we defined the outbreak windows as sequences of consecutive weeks during which at least one plague death was listed in the LBoM.  See \supp \cref{tab:windows,tab:windowsminor}.
 
 \hypertarget{data.and.code}{}
-\paragraph{Data and code availability}
+\subsection*{Data and code availability}
 
 Our \texttt{epigrowthfit} R package for estimating initial growth
 rates, which includes all the data used in this paper, is available at
@@ -326,6 +330,11 @@ obtained from the International Infectious Disease Data Archive
 to reproduce all of our results is available at
 \url{https://github.com/davidearn/plague_growth}.
 
-\mysectionsamepage{Acknowledgements}
+}% end \matmethods
 
-The plague mortality data were photographed and/or entered by Seth Earn, Kelly Hancock, Claire Lees, James McDonald, David Price and Hannah Price.  Valerie Hart facilitated work at the Guildhall Library in London.  Non-exponential comparison fits were conducted by David Champredon.  Sang Woo Park assisted in finding published estimates of auxiliary epidemic parameters. Alex Bushby assisted with compiling probate dates. Sigal Balshine, Ann Carmichael and David Price made helpful comments.  Early stages of this research were supported by a J.\,S.~McDonnell Foundation Research Award to DE (\url{https://www.jsmf.org/grants/d.php?id=2006014}).  All the authors were supported by Discovery grants from the Natural Sciences and Engineering Research Council of Canada (NSERC). HP was supported by the Social Sciences and Humanities Research Council of Canada (SSHRC). SHARCnet (\url{http://www.sharcnet.ca}) provided computational resources.  David Earn dedicates this paper to Josephine Earn, who enthusiastically discussed the history of London (and plagues) with him over many years.
+\showmatmethods{} % Display the Materials and Methods section
+
+\acknow{The plague mortality data were photographed and/or entered by Seth Earn, Kelly Hancock, Claire Lees, James McDonald, David Price and Hannah Price.  Valerie Hart facilitated work at the Guildhall Library in London.  Non-exponential comparison fits were conducted by David Champredon.  Sang Woo Park assisted in finding published estimates of auxiliary epidemic parameters. Alexandra Bushby assisted with compiling probate dates. Sigal Balshine, Ann Carmichael and David Price made helpful comments.  Early stages of this research were supported by a J.\,S.~McDonnell Foundation Research Award to DE (\url{https://www.jsmf.org/grants/d.php?id=2006014}).  All the authors were supported by Discovery grants from the Natural Sciences and Engineering Research Council of Canada (NSERC). HP was supported by the Social Sciences and Humanities Research Council of Canada (SSHRC). SHARCnet (\url{http://www.sharcnet.ca}) provided computational resources.  David Earn dedicates this paper to Josephine Earn, who enthusiastically discussed the history of London (and plagues) with him over many years.}
+
+\showacknow{} % Display the acknowledgments section
+

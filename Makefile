@@ -113,9 +113,13 @@ autosub/%.pdf: autosub/Makefile autosub/%.tex
 
 checksub:
 	$(RM) autosub/*.*
-	$(MAKE) makesub
+	$(MAKE) fullsub.pdf
+	$(MAKE) fullsub.pdf.go
 
-makesub: autosub/Earn_etal_ms.pdf autosub/Earn_etal_supp.pdf
+fullsub.pdf: autosub/Earn_etal_ms.pdf autosub/Earn_etal_supp.pdf
+	$(pdfcat)
+
+submitpaper: checkpaper checksub
 
 ######################################################################
 

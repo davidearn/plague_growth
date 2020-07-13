@@ -10,6 +10,9 @@ images = cripplegate_wellcome_parish.pdf
 ## supp
 figs += london_pop.pdf probate_dates.pdf plotallscaled_crop.pdf plotall_crop.pdf plotwills14c.pdf plot3sourcesmajors.pdf KvsR.pdf seasonalgrowth.pdf
 
+## Cross references
+resources += supp_crossrefs.tex ms.aux
+
 ## INKSCAPE = inkscape $< --export-eps=$@
 ## INKSCAPE = inkscape $< --export-type=eps -o $@
 

@@ -94,20 +94,27 @@ analysis/tables/%.tex: $(wildcard analysis/tables/*.R)
 
 ## Autosub (make files for submission)
 
-Ignore += ms_flat.tex
-ms_flat.tex: ms.tex supp.pdf
+Ignore += *_flat.tex
+%_flat.tex: %.tex supp.pdf
 	perl -f makestuff/latexpand.pl $< > $@
+
+## Scripts for flattening the includeg statements
+Sources += epsMS.pl trimMS.pl
 
 Sources += autosub/Makefile
 Ignore += autosub/*.*
-autosub:
-	$(mkdir)
-Sources += submit.pl
-autosub/Earn_etal_MS.tex: ms_flat.tex submit.pl
+.PRECIOUS: autosub/Earn_etal_%.tex
+autosub/Earn_etal_%.tex: %_flat.tex trimMS.pl
 	$(PUSH)
 
-autosub/Earn_etal_MS.pdf: autosub/Makefile autosub/Earn_etal_MS.tex
-	$(makethere)
+autosub/%.pdf: autosub/Makefile autosub/%.tex
+	$(justmakethere)
+
+checksub:
+	$(RM) autosub/*.*
+	$(MAKE) makesub
+
+makesub: autosub/Earn_etal_ms.pdf autosub/Earn_etal_supp.pdf
 
 ######################################################################
 

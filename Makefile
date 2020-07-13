@@ -60,11 +60,12 @@ supp.tex: supp.Rnw analysis/fits/epochsum.RData
 ## Crossrefs 2020 Jun 11 (Thu) 
 
 Ignore += supp_crossrefs.tex
-supp_crossrefs.tex: supp.tex
+supp_crossrefs.tex: supp.pdf
 	$(MAKE) supp.ltx
 	grep newlabel supp.aux > $@
 
 ######################################################################
+
 ### Analysis subdirectories
 ## fits ##
 Sources += $(wildcard analysis/fits/*.R)

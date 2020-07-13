@@ -38,7 +38,9 @@
 
 %% avoid need to cross-reference with supp file by explicitly
 %% including newlabel commands from supp.aux here. 
-%%%%\input{supp_crossrefs.tex}
+\makeatletter
+\input{supp_crossrefs.tex}
+\makeatother
 
 %% Main MS text
 \input{ms_text.tex}

@@ -53,11 +53,11 @@ seasonalgrowth.tex: seasonalgrowth.Rout ;
 seasonalgrowth.Rout: ../fits/nlminb_logit_major.do.Rout.envir ../fits/minors.Rout.envir setcolours.Rout ../fits/epidemics.Rout plot.Rout seasonalgrowth.R
 	$(run-R)
 
-# plotallscaled.crop.pdf: plotallscaled.R
+# plotallscaled_crop.pdf: plotallscaled.R
 plotallscaled.tex: plotallscaled.Rout ;
 plotallscaled.Rout: ../fits/data.Rout plot.setup.Rout plotallscaled.R
 
-# plotall.crop.pdf: plotall.R
+# plotall_crop.pdf: plotall.R
 plotall.tex: plotall.Rout ;
 plotall.Rout: ../fits/data.Rout plot.setup.Rout plotall.R
 

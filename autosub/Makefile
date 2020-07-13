@@ -8,7 +8,7 @@ pix = WillExample1644_page86_1.pdf bill1665adjust.pdf
 images = cripplegate_wellcome_parish.pdf 
 
 ## supp
-figs += london_pop.pdf probate_dates.pdf plotallscaled.crop.pdf plotall.crop.pdf plotwills14c.pdf plot3sourcesmajors.pdf KvsR.pdf seasonalgrowth.pdf
+figs += london_pop.pdf probate_dates.pdf plotallscaled_crop.pdf plotall_crop.pdf plotwills14c.pdf plot3sourcesmajors.pdf KvsR.pdf seasonalgrowth.pdf
 
 ## INKSCAPE = inkscape $< --export-eps=$@
 ## INKSCAPE = inkscape $< --export-type=eps -o $@

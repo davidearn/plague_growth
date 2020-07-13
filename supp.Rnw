@@ -5,6 +5,7 @@
 
 %% we need to cross-reference to main manuscript file:
 \usepackage{xr-hyper}
+\usepackage{grffile}
 \externaldocument{ms}
 
 \usepackage{xspace}

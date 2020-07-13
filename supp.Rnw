@@ -329,7 +329,7 @@ with span=0.5 (shaded regions are 95\% confidence intervals).}
 %
 \begin{figure*}%[h!]
 \begin{center}
-\includegraphics[width=\mywidth]{analysis/plots/plotallscaled.crop.pdf}
+\includegraphics[width=\mywidth]{analysis/plots/plotallscaled_crop.pdf}
 \end{center}
 \caption[Plague deaths per 1000 per week]{Plague deaths per 1000 persons per week, from 1563 to 1666.
 Epidemics that exceeded 5 on this scale were classified as \emph{major}.
@@ -343,7 +343,7 @@ in \cref{tab:minorparams,F:seasonalgrowth}.
 \begin{figure*}%[h!]
 \begin{center}
 %%\scalebox{0.6}{
-\includegraphics[width=\mywidth]{analysis/plots/plotall.crop.pdf}
+\includegraphics[width=\mywidth]{analysis/plots/plotall_crop.pdf}
 %%}
 \end{center}
 \caption[Plague deaths]{All plague deaths reported in London from 1563 to 1666.}

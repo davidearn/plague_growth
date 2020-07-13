@@ -77,7 +77,7 @@ london_pop.Rout: london_pop.R
 ######################################################################
 
 ## Figure cropping
-%.crop.pdf: %.pdf
+%_crop.pdf: %.pdf
 	pdfcrop $< $@
 
 ### Analysis subdirectory

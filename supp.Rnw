@@ -168,7 +168,7 @@ If we assume the estimate of $\gentime=18$ days obtained
 \hyperlink{sec:gentime}{above}, and the MLE growth rates from early and late wills
 listed in \cref{tab:params}, the relative change in reproduction
 number that needs explanation is
-<<rat_R0_calc,echo=FALSE>>=
+<<rat_R0_calc,echo=FALSE,warning=FALSE>>=
 ratR0 <- function(r){ (r / 365 * 18) + 1 }
 load("analysis/fits/epochsum.RData")
 r1 <- rvals["fit","early"]

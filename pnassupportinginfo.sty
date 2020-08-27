@@ -35,6 +35,7 @@
 \renewcommand{\thedataset}{S\arabic{dataset}}
 \newtotcounter{SItext}
 \newcommand{\SItext}{%
+  \hypertarget{sec:supptext}{}
   \section*{Supporting Information Text}
   \stepcounter{SItext}
 }
@@ -89,7 +90,7 @@ Delete this first page by removing the \texttt{\textbackslash instructionspage} 
     \setlength\parsep{0pt}}
     %% Check if there is some SI text
     \ifnum\totvalue{SItext}>0
-      \item Supplementary text
+      \item \hyperlink{sec:supptext}{Supplementary text}
     \fi
     %% Total # of figures
     \ifnum\totvalue{figure}>0
@@ -97,7 +98,8 @@ Delete this first page by removing the \texttt{\textbackslash instructionspage} 
       \ifnum\totvalue{figure}=1
       Fig.~S1
       \else
-      Figs.~S1 to S\total{figure}
+      %%Figs.~S1 to S\total{figure}
+      Figs.~\ref{F:london_pop} to \ref{F:seasonalgrowth}
       \fi
     \fi
     %% Total # of tables
@@ -106,7 +108,8 @@ Delete this first page by removing the \texttt{\textbackslash instructionspage} 
       \ifnum\totvalue{table}=1
       Table S1
       \else
-      Tables S1 to S\total{table}
+      %%Tables S1 to S\total{table}
+      Tables \ref{T:london_pop} to \ref{tab:windowsminor}
       \fi
     \fi
     %%% Total # of movies
@@ -129,7 +132,8 @@ Delete this first page by removing the \texttt{\textbackslash instructionspage} 
     \fi
     %%% Whether there's a references section
     \ifnum\totvalue{NAT@ctr}>0
-      \item SI References
+      %%\item SI References
+      \item \hyperlink{page.21}{SI References}
     \fi
   \end{list}
   \fi

@@ -86,7 +86,7 @@ Before the 17th century, the number of PCC wills is too small to detect an epide
 
 \subsection*{Will dates vs.\ probate dates}
 
-The Calendar of Wills probated in the Court of Husting \cite{Shar1889} is organized by court dates, so every will is associated with a definite date on which it was probated; in contrast, only 64\% of the wills provide information on the date of writing \cite{Bush19}. Despite this lower sample size and the fact that wills were in some cases written long before death, dates of writing actually provide a much more plausible representation of the epidemic patterns in the 14th century than probate dates (\cref{F:willsVSprobates}).  Graphs in the main text (\cref{F:plot3sources,F:timeseries,F:combdata}) are based on counts of wills written.  See \hyperlink{mainsec:Data.wills}{``Wills and testaments''} in the Data section of the main text for further discussion.
+The Calendar of Wills probated in the Court of Husting \cite{Shar1889} is organized by court dates, so every will is associated with a definite date on which it was probated; in contrast, only 64\% of the wills provide information on the date of writing \cite{Bush19}. Despite this lower sample size and the fact that wills were in some cases written long before death, dates of writing actually provide a much more plausible representation of the epidemic patterns in the 14th century than probate dates (\cref{F:willsVSprobates}).  Graphs in the main text (\cref{F:plot3sources,F:timeseries,F:combdata}) are based on counts of wills written.  See \href[page=2]{ms.pdf}{``Wills and testaments''} in the Data section of the main text for further discussion.
 
 \subsection*{London Bills of Mortality (LBoM)}
 

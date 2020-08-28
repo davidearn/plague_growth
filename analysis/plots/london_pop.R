@@ -34,7 +34,8 @@ plot(total ~ year, data=pop, type="n",
      )
 axis(side=2, at=(0:4)*10^5, labels=c("0","$10^5$", paste("$", 2:4, "\\times 10^5$")), las=1)
 
-grid()
+##grid()
+abline(h=1e5*(1:4), v=seq(1350,1700,by=50), col="grey", lty="dotted")
 
 lines(total ~ year, data=pop,
      type="o", lwd=2, pch=21, bg="cyan", cex=2, xpd=NA

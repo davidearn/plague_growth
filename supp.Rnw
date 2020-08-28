@@ -1,5 +1,8 @@
 \documentclass[9pt,twocolumn,twoside,lineno,table]{pnas-new}
 % Use the lineno option to display guide line numbers if required.
+\definecolor[named]{verylightgray}{rgb}{0.93,0.93,0.93}
+\renewcommand{\linenumberfont}{\normalfont\sffamily\tiny\color{lightgray}}
+\urlstyle{tt}
 
 %% knitr requires documentclass to be the first line of the file
 
@@ -18,8 +21,6 @@
 \Crefname{equation}{Equation}{Equations}
 \crefname{figure}{Figure}{Figures}
 \Crefname{figure}{Figure}{Figures}
-
-\definecolor[named]{verylightgray}{rgb}{0.93,0.93,0.93}
 
 \input{analysis/fits/modeldefs.tex}
 \input{macros.tex}
@@ -41,7 +42,9 @@
 \title{Acceleration of plague outbreaks in the second pandemic}
 
 \author{David J.\,D.\ Earn, Junling Ma, Hendrik Poinar, Jonathan Dushoff, Benjamin M.\ Bolker}
-\correspondingauthor{E-mail: \texttt{earn@math.mcmaster.ca}}
+\correspondingauthor{E-mail: {\color{blue}\texttt{earn@math.mcmaster.ca}}
+  \\\bigskip DOI: \texttt{10.1073/pnas.2004904}
+}
 
 % Please give the surname of the lead author for the running footer
 \leadauthor{Earn} 
@@ -101,7 +104,7 @@ Creighton \cite{Crei65} tabulates data for 1606--1610
 
 \subsection*{Parish registers}
 
-Cummins \emph{et al.} \cite{Cumm+16} obtained parish register data from \href{https://www.ancestry.com}{ancestry.com} and have made the weekly counts of deaths available at \url{http://neilcummins.com}.  For the 16th and 17th century epidemics, the parish data provide a third source.  For 1593, these are the only reliable data (we consider them to be reliable because they are part of a continuous weekly time series from 1538 onwards).
+Cummins \emph{et al.} \cite{Cumm+16} obtained parish register data from \href{https://www.ancestry.com}{\texttt{ancestry.com}} and have made the weekly counts of deaths available at \url{http://neilcummins.com}.  For the 16th and 17th century epidemics, the parish data provide a third source.  For 1593, these are the only reliable data (we consider them to be reliable because they are part of a continuous weekly time series from 1538 onwards).
 
 \subsection*{Major vs minor plague epidemics}
 
@@ -286,6 +289,8 @@ results (highest log likelihood) for point estimates.
 In general, we used the standard link functions proposed by Ma \emph{et al.} \cite{Ma+14}, i.e., fitting most of the parameters (growth rate $r$, background mortality/wills rate $b$, final size $K$, Richards shape parameter $s$) on the log scale with a scaled-tangent link ($\eta = \tan(\pi/2 \cdot (x/2-1))$) for the initial condition $x_0$. However, we found that the scaled-tangent link declined too slowly in the tails, leading to numerical instability; we replaced it with a more standard logit link ($\eta = \log(x/(1-x))$).
 
 With this approach we failed to achieve good (convergent) fits for only three combinations of source and outbreak year, all for minor outbreaks (London bills for 1578 and 1582, Canterbury wills for 1581); these cases are excluded from the tables and figures shown below.
+%% hack this target because pnas style breaks footnote hyperrefs:
+\hypertarget{Hfootnote.1}{}
 
 In the future, we would suggest that further work on reparameterization, including parameterizing the logistic by the time at which half of the final size is achieved rather than by the initial number infected, and possibly the reparameterization and regularization methods suggested by \cite{SmirChow17} for the Richards model, would be useful. 
 

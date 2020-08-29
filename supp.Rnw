@@ -395,8 +395,10 @@ Vertical grey lines indicate the ``outbreak window'' specified in \cref{tab:wind
   \includegraphics{analysis/plots/seasonalgrowth.pdf}
 }
 \end{center}
-\caption{Growth rate estimates for all the late epoch (1540--1680) London plague epidemics.  The growth rates shown for the major epidemics are the same as those in the right panel of \cref{F:combdata}. 
-}
+\caption{Growth rate estimates for all the late epoch (1540--1680)
+  London plague epidemics.  The growth rates shown for the major
+  epidemics are the same as those in the right panel of
+  \cref{F:combdata}.  See \cref{tab:params,tab:minorparams}.}
 \label{F:seasonalgrowth}
 \end{figure*}
 %

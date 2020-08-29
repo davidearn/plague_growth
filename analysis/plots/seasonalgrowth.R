@@ -52,8 +52,9 @@ for (i in seq(nrow(bad))) {
 ## hack since we loaded data *including pdfname*?
 dd <- (bind_rows(minor=minorSum,major=majorSum,.id="severity")
     %>% filter(outbreak.year>1500)
-    %>% mutate(source=mod_source(source))  ## recode source names
+    ## need to drop_bad() **BEFORE** recoding source names
     %>% drop_bad()
+    %>% mutate(source=mod_source(source))  ## recode source names
     %>% filter(conv==0)
     %>% select(outbreak.year,source,
                severity,starts_with("growthrate"))

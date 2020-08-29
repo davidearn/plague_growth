@@ -326,7 +326,7 @@ In the future, we would suggest that further work on reparameterization, includi
 \caption[Wills written vs.\ probated]{Counts of wills written vs.\ wills probated during each of
   the four 14th century plague epidemics in London, based on wills
   probated in the Court of Husting \cite{Shar1889}. Smooth lines represent loess fits
-with span=0.5 (shaded regions are 95\% confidence intervals).}
+with \texttt{span=0.5} (shaded regions are 95\% confidence intervals).}
 \label{F:willsVSprobates}
 \end{figure*}
 %
@@ -488,10 +488,32 @@ Late & 1540--1680 & Last Wills and Testaments & Daily & Prerogative Court of Can
 \end{table*}
 
 \begin{table*}
-  \caption[Minor outbreak parameter estimates]{Parameter estimates for minor plague epidemics. Plague epidemics with $\hat r<1/\mathrm{yr}$ or $\hat r>100/\mathrm{yr}$, representing unreliable fits, are excluded; confidence limits that are $<0.1$ or $>200$ are replaced with {\tt NA}. See \Methodslink.}
-  \footnotesize
-  \rowcolors{2}{white}{verylightgray}
+  \caption[Minor outbreak parameter estimates]{Parameter estimates for
+    minor plague epidemics (\emph{cf.}\/ \cref{F:seasonalgrowth}).
+    Plague epidemics with $\hat r<1/\mathrm{yr}$ or
+    $\hat r>100/\mathrm{yr}$, representing unreliable fits, are
+    excluded; confidence limits that are $<0.1$ or $>200$ are replaced
+    with {\tt NA}. See \Methodslink.}
+  \footnotesize \rowcolors{2}{white}{verylightgray}
   \begin{center}
+%% To get the colours used for each data type in plots:
+%% source('plague_growth/analysis/plots/setcolours.R')
+%% colvec1
+%%    wills    parish      LBoM 
+%%" #4D4D4D" "#1F78B4" "#E31A1C" 
+%% t(col2rgb(colvec1))
+%%        red green blue
+%% wills   77    77   77
+%% parish  31   120  180
+%% LBoM   227    26   28
+%% signif(t(col2rgb(colvec1))/255,3)
+%%          red green  blue
+%% wills  0.302 0.302 0.302
+%% parish 0.122 0.471 0.706
+%% LBoM   0.890 0.102 0.110
+\definecolor{willsgrey}{rgb}{0.302,0.302,0.302}
+\definecolor{parishblue}{rgb}{0.122,0.471,0.706}
+\definecolor{LBoMred}{rgb}{0.890,0.102,0.110}
     \input{analysis/tables/minorparams.tex}
   \end{center}
   \label{tab:minorparams}

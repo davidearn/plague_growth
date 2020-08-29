@@ -67,11 +67,11 @@ latexTable <- function(fit, columns, colnames, digits=1, percent=FALSE, comment=
 
   ## ssn = 'simplify source names':
   ## FIX: why does x get altered to numeric by the first ifelse ?!?
-  ## FIX: colours should be exactly the same as in plots
+  ## colours should be exactly the same as in plots [DONE, 29 Aug 2020]
   ssn <- function(x) {
     x <- ifelse(grepl("wills",x), "Wills", x)
-    x <- ifelse(grepl("bills",x), "{\\color{red}LBoM}", x)
-    x <- ifelse(grepl("parish",x),"{\\color{blue}Parish}", x)
+    x <- ifelse(grepl("bills",x), "{\\color{LBoMred}LBoM}", x)
+    x <- ifelse(grepl("parish",x),"{\\color{parishblue}Parish}", x)
     return(x)
   }
   data <- data %>% mutate(Source=ssn(as.character(Source)))

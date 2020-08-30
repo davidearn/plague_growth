@@ -27,7 +27,7 @@
 
 %% http://tex.stackexchange.com/questions/316510/hyperlink-within-caption-to-a-figure
 %% if used in a caption, need short content \caption[...]{ ... \Methodslink ... }
-\renewcommand{\Methodslink}{\href[page=8]{ms.pdf}{\emph{Methods}}}
+\renewcommand{\Methodslink}{\href[page=8]{ms.pdf}{\emph{Methods}} in main text}
 
 %% put S in front of equation and figure names in \supp
 \renewcommand{\theequation}{S\arabic{equation}}

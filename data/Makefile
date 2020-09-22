@@ -1,0 +1,3 @@
+## n.b. probate.rds won't exist/be make-able if willsr is missing ...
+probate_counts.rds: get_probate_counts.R probate.rds
+	R CMD BATCH --vanilla get_probate_counts.R

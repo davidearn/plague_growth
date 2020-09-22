@@ -22,7 +22,11 @@ combdata.Rout: ../fits/comb.Rout ../fits/permtest.Rout
 combdata.Rout: ../fits/epidemics.Rout setcolours.Rout 3axes.Rout combdata.R
 
 probate_dates.tex: probate_dates.Rout ;
-probate_dates.Rout: ../fits/epidemics.Rout ../fits/comb.Rout plot.setup.Rout probate_dates.R
+probate_dates.Rout: ../fits/epidemics.Rout ../fits/comb.Rout ../../data/probate_counts.rds plot.setup.Rout probate_dates.R
+
+../../data/probate_counts.rds:
+	$(MAKE) probate_counts.Rds
+	$(CP) probate_counts.Rds $@
 
 ## This is not part of the main pipeline because willsr is not public
 probate.Rds: probate.Rout ;

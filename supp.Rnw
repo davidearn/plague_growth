@@ -236,11 +236,11 @@ which, for $aK_{{\rm R},j}\ll1$, simplifies to
 The approximation (appropriate in the limit $aK\to0$) provides a lower
 bound to the true relationship, indicating that rat density would have
 had to increase by at least a factor of \Sexpr{round(R0ratio,2)}
-to account for a similar increase \eqref{E:Rratio} in $\R_0$.
+to account for a similar increase [\cref{E:Rratio}] in $\R_0$.
 
-\cref{F:KvsR} shows the exact relationship \eqref{E:R0ratio} for
+\cref{F:KvsR} shows the exact relationship [\cref{E:R0ratio}] for
 several values of $aK_{{\rm R},1}$, together with the approximation
-for small $aK$ \eqref{E:aKsmall}.  Keeling and Gilligan \cite[Table 1,
+for small $aK$ [\cref{E:aKsmall}].  Keeling and Gilligan \cite[Table 1,
 p.\,2221]{KeelGill00b} adopt values of $a$ and $K_{{\rm R}}$ that
 yield $aK_{{\rm R}}=10$.  If this is the correct order of magnitude
 for $aK_{{\rm R},1}$ then \cref{E:R0ratio} implies that no increase in

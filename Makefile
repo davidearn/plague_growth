@@ -22,6 +22,9 @@ Sources += library.R texstuff.tex required_packages
 
 library.Rout: required_packages library.R
 
+Sources += install_pkgs.R
+install_pkgs.Rout: install_pkgs.R required_packages
+
 ######################################################################
 
 ## Documents
@@ -125,12 +128,13 @@ submitpaper: checkpaper checksub
 
 ## Miscellaneous
 
-Sources += install_pkgs.R
-install_pkgs.Rout: install_pkgs.R required_packages
-
 Sources += pnas-new.bst $(wildcard images/*.*)
 
 Sources += $(wildcard data/*.*)
+
+######################################################################
+
+## Delete all this when update is finished
 
 Sources += epiPEN.pl
 epiPEN: epiPEN.pl

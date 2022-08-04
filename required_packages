@@ -1,7 +1,7 @@
 ## required packages for plague_growth workflow
-## not including bbmle, epigrowthfit (install via remotes::install_github()
 ## not including epigrowthfit dependencies (auto-installed)
 ## see install_pkgs.R
+bbmle
 broom.mixed
 colorspace
 cowplot

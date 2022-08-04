@@ -1,6 +1,6 @@
 library(methods)
 library(emdbook)
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 
 ## default is warn=0.  warn=1 gives 'real time' warnings rather than

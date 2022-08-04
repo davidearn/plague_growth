@@ -1,6 +1,6 @@
 library(methods)
 library(emdbook)
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 library(xtable)
 

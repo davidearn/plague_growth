@@ -1,4 +1,4 @@
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 source("../analysis/fits/epidemics.R")
 library(ggplot2); theme_set(theme_bw())

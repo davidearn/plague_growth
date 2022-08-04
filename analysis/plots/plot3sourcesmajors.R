@@ -2,7 +2,7 @@
 ## epidemics are evident simultaneously no matter what source we
 ## examine
 
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 library(lubridate)
 library(tikzDevice)

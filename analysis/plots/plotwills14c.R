@@ -1,6 +1,6 @@
 ## show 14th century Husting wills in style of plot3sourcesmajors.R
 
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 library(lubridate)
 library(tikzDevice)

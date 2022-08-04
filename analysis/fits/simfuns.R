@@ -1,6 +1,6 @@
 library(dplyr)
 library(purrr)
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 
 ## extract 'sampling' design from data; which outbreak years
 ##  do we have which sources for?

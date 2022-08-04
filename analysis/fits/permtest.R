@@ -1,7 +1,7 @@
 library(methods)
 library(dplyr)
 
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(glmmTMB)
 ss <- (summary.fitList(fitList,level=2)
     ## log-transform ... and rename ...

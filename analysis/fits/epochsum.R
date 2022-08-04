@@ -5,7 +5,7 @@ if (packageVersion("glmmTMB")<"0.2.2.0") {
     stop("need latest version of glmmTMB: ",
          "devtools::install_github('glmmTMB/glmmTMB/glmmTMB')")
 }
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(emmeans)
 library(multcomp)
 

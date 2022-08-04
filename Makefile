@@ -132,6 +132,13 @@ Sources += pnas-new.bst $(wildcard images/*.*)
 
 Sources += $(wildcard data/*.*)
 
+Sources += epiPEN.pl
+epiPEN: epiPEN.pl
+	perl -pi -e "\
+		s/library[(]epigrowthfit[)]/library(epigrowthfitPNAS)/; \
+		s/epigrowthfit::/epigrowthPNAS::/; \
+	" *.R */*.R */*/*.R
+
 ######################################################################
 
 ### Makestuff

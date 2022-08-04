@@ -3,7 +3,7 @@ file = if (length(args) < 1) "suppwindowsminor.tex" else args[1]
 majors_only = if (length(args) < 2) TRUE else as.logical(args[2])
 
 library(Hmisc) # for latex()
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 
 window_defs <- (summary.fitList(fitList,key="type")

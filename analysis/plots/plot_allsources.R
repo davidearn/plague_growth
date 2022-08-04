@@ -13,7 +13,7 @@ height = if (length(args) < 4) defaults$height else as.numeric(args[4])
 
 cat(width,height,"\n")
 
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 library(lubridate)
 library(tikzDevice)

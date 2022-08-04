@@ -1,4 +1,4 @@
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 library(lubridate)
 library(tikzDevice)

@@ -1,4 +1,4 @@
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(ggplot2)
 library(tikzDevice)
 

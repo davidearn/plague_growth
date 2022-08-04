@@ -4,7 +4,7 @@ output = ".comb.RData"
 library(dplyr)
 library(tidyr)
 library(methods) # needed for as(); needs to go *before* epigrowthfit!
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 
 ## testing GOF
 ## summary(fitList[[2]][[1]])

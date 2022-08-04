@@ -1,6 +1,6 @@
 library(methods)
 library(emdbook)
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 library(xtable)
 
@@ -13,7 +13,7 @@ rfun <- function(n) {
 ## testing
 ## summary(fitList[[1]][[1]],plague_R0=TRUE)
 ## trace("summary",sig="epigrowthfit", browser)
-## debug(epigrowthfit:::summary.epigrowthfit)
+## debug(epigrowthPNAS:::summary.epigrowthfit)
 ss <- (summary.fitList(fitList,level=2,plague_R0=TRUE)
     %>% drop_bad()
     %>% select(source,outbreak.year,

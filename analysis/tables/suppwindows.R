@@ -4,7 +4,7 @@ majors_only = if (length(args) < 2) TRUE else as.logical(args[2])
 
 ##library(xtable)
 library(Hmisc) # for latex()
-library(epigrowthfit)
+library(epigrowthfitPNAS)
 library(dplyr)
 ## source("analysis/data.R")
 

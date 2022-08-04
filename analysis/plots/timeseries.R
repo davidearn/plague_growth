@@ -4,7 +4,7 @@ library(cowplot)
 library(ggplot2)
 	theme_set(theme_bw()) ## FIXME: don't hardcode? (coded in plot.R?)
 library(directlabels)
-library(epigrowthfit) ## for parish data
+library(epigrowthfitPNAS) ## for parish data
 
 
 args = commandArgs(trailingOnly=TRUE)

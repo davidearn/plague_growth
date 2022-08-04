@@ -75,9 +75,9 @@ Sources += $(wildcard analysis/fits/*.R)
 Sources += analysis/fits/Makefile
 Ignore += analysis/fits/*.tex analysis/fits/*.pdf analysis/fits/*.rds
 analysis/fits/%.tex analysis/fits/%.Rout analysis/fits/%.RData: $(wildcard analysis/fits/*.R)
-	$(makestuffthere)
+	$(justmakethere)
 analysis/plots/makestuff analysis/fits/makestuff:
-	$(makestuffthere)
+	$(justmakethere)
 
 ## plots ##
 Sources += $(wildcard analysis/plots/*.R)
@@ -85,7 +85,7 @@ Sources += analysis/plots/Makefile analysis/plots/crown.png
 analysis/plots/crown.png: ;
 Ignore += analysis/plots/*.tex analysis/plots/*.pdf analysis/plots/willsr
 analysis/plots/%.pdf: $(wildcard analysis/plots/*.R)
-	$(makethere)
+	$(justmakethere)
 
 ## tables ##
 Sources += $(wildcard analysis/tables/*.R)

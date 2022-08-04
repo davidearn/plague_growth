@@ -1,5 +1,5 @@
 ## required packages for plague_growth workflow
-## not including epigrowthfit and dependencies
+## not including epigrowthfit and dependencies (auto-installed)
 ## see install_pkgs.R
 bbmle
 broom.mixed

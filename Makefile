@@ -125,6 +125,7 @@ submitpaper: checkpaper checksub
 
 ## Miscellaneous
 
+Sources += install_pkgs.R
 install_pkgs.Rout: install_pkgs.R required_packages
 
 Sources += pnas-new.bst $(wildcard images/*.*)
